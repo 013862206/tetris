@@ -1,3 +1,1 @@
-# tetris
-Pieni Repotreen
-Pull kokeilu
+# Tetris

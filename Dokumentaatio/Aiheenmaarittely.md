@@ -1,2 +1,2 @@
 # Aiheenmäärittely
-*Aihe: Tetris
+**Aihe:** Tetris

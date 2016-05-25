@@ -9,16 +9,38 @@ import java.util.*;
  *
  * @author luhtalam
  */
-public abstract class Piece {
+public abstract class Block implements Moveable {
     private ArrayList<Part> parts;
     
-    public Piece() {
+    public Block() {
         this.parts = new ArrayList();
+    }
+    
+    public void addPart(Part part) {
+        this.parts.add(part);
     }
     
     public void move(int dx, int dy) {
         for (Part part : this.parts) {
             part.move(dx, dy);
+        }
+    }
+    
+    public void moveDown() {
+        for (Part part : this.parts) {
+            part.moveDown();
+        }
+    }
+    
+    public void moveLeft() {
+        for (Part part : this.parts) {
+            part.moveLeft();
+        }
+    }
+    
+    public void moveRight() {
+        for (Part part : this.parts) {
+            part.moveRight();
         }
     }
     

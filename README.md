@@ -3,4 +3,4 @@ Reaaliaikainen peli Tetris.
 
 ##Dokumentaatio
 
-[Aiheen kuvaus] (Dokumentaatio/Aiheenmäärittely.md)
+[Aiheen kuvaus] (Dokumentaatio/Aiheenmaarittely.md)

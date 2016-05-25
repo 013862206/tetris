@@ -5,5 +5,5 @@ Reaaliaikainen peli Tetris.
 
 * [Aiheen kuvaus] (Dokumentaatio/Aiheenmaarittely.md)
 * [Tuntikirjanpito] (Dokumentaatio/Tuntikirjanpito.md)
-* [Pit-raportti] (Dokumentaatio/Pit/index.html)
-* [Checkstyle-raportti] (Dokumentaatio/Checkstyle/site/checkstyle.html)
+* [Pit] (Dokumentaatio/Pit)
+* [Checkstyle] (Dokumentaatio/Checkstyle/site/)

@@ -1,6 +1,6 @@
 # Tetris
 Reaaliaikainen peli Tetris.
 
-##Dokumentaatio
+##Dokumentaatio:
 
-[Aiheen kuvaus] (Dokumentaatio/Aiheenmaarittely.md)
+* [Aiheen kuvaus] (Dokumentaatio/Aiheenmaarittely.md)

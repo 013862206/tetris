@@ -9,6 +9,13 @@ package tetris.domain;
  *
  * @author luhtalam
  */
-public class SBlock {
-    
+public class SBlock extends Block {
+
+    public SBlock(int x, int y) {
+        super.addPart(new Part(x, y));
+        super.addPart(new Part(x - 1, y));
+        super.addPart(new Part(x - 1, y + 1));
+        super.addPart(new Part(x - 2, y + 1));
+    }
+
 }

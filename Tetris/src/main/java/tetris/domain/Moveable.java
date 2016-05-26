@@ -10,9 +10,11 @@ package tetris.domain;
  * @author luhtalam
  */
 public interface Moveable {
-    
+
     public void moveRight();
+
     public void moveLeft();
+
     public void moveDown();
-    
+
 }

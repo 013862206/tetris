@@ -36,12 +36,6 @@ public class PartTest {
     }
 
     @Test
-    public void testConstructorWidthIsRight() {
-        this.part = new Part(1, 2);
-        assertEquals(10, part.getWidth());
-    }
-
-    @Test
     public void testMoveDxIsZero() {
         int x = 2;
         int dx = 0;

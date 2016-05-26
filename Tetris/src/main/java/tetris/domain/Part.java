@@ -13,12 +13,10 @@ public class Part implements Moveable {
 
     private int xCoord;
     private int yCoord;
-    private int width;
-    
+
     public Part(int x, int y) {
         xCoord = x;
         yCoord = y;
-        width = 10;
     }
 
     public void move(int dx, int dy) {
@@ -26,14 +24,17 @@ public class Part implements Moveable {
         yCoord += dy;
     }
 
+    @Override
     public void moveDown() {
         yCoord += 1;
     }
 
+    @Override
     public void moveRight() {
         xCoord += 1;
     }
 
+    @Override
     public void moveLeft() {
         xCoord -= 1;
     }
@@ -50,9 +51,4 @@ public class Part implements Moveable {
     public int getYCoord() {
         return yCoord;
     }
-
-    public int getWidth() {
-        return width;
-    }
-
 }

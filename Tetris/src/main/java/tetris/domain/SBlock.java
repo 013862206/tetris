@@ -12,10 +12,16 @@ package tetris.domain;
 public class SBlock extends Block {
 
     public SBlock(int x, int y) {
-        super.addPart(new Part(x, y));
-        super.addPart(new Part(x - 1, y));
-        super.addPart(new Part(x - 1, y + 1));
-        super.addPart(new Part(x - 2, y + 1));
+        super();
+        parts[0] = (new Part(x - 1, y));
+        parts[1] = (new Part(x, y));
+        parts[2] = (new Part(x, y - 1));
+        parts[3] = (new Part(x + 1, y - 1));
+    }
+
+    @Override
+    void rotate() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

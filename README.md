@@ -1,5 +1,5 @@
 # Tetris
-Reaaliaikainen peli Tetris.
+Reaaliaikainen peli Tetris. Toteututaan graafisen käyttöliittymän ja näppäimistön avulla toimiva peli, jossa pelaajan tavoitteena on siirrellä pelin konstruoimia palikoita niin, etteivät ne kosketa peliruuden ylälaitaa. Kun palikat saadaan aseteltua niin, että niiden sisältämät palaset muodostavat yhtenäisen rivin, rivi tuhoutuu ja pelaaja saa pisteitä.
 
 ##Dokumentaatio
 

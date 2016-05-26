@@ -12,7 +12,7 @@ package tetris.domain;
 public class TBlock extends Block {
 
     public TBlock(int x, int y) {
-        super(x,y);
+        super(x, y);
         parts[0] = (new Part(x, y - 1));
         parts[1] = (new Part(x, y));
         parts[2] = (new Part(x - 1, y));

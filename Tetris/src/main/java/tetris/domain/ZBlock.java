@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tetris.entity;
+package tetris.domain;
 
 /**
  *
  * @author luhtalam
  */
-public class LBlock extends Block {
+public class ZBlock extends Block {
 
-    public LBlock(int x, int y) {
+    public ZBlock(int x, int y) {
         super(x,y);
-        parts[0] = (new Part(x, y - 1));
+        parts[0] = (new Part(x + 1, y));
         parts[1] = (new Part(x, y));
-        parts[2] = (new Part(x, y + 1));
-        parts[3] = (new Part(x + 1, y + 1));
-    }
+        parts[2] = (new Part(x, y - 1));
+        parts[3] = (new Part(x - 1, y - 1));
+    } 
 }

@@ -16,3 +16,6 @@
 * Pelinäppäinten muuttaminen
 * Värimaailman säätäminen
 * Lisävaikeustaso, jossa yllätyksiä
+
+
+![Luokkakaavio](TetrisClassDiagram.png)

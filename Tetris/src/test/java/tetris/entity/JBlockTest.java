@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tetris.domain;
+package tetris.entity;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author luhtalam
  */
-public class SBlockTest {
+public class JBlockTest {
     
-    public SBlockTest() {
+    public JBlockTest() {
     }
     
     @BeforeClass

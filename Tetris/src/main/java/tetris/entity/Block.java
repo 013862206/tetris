@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tetris.domain;
+package tetris.entity;
 
 import java.util.*;
 
@@ -34,6 +34,7 @@ public abstract class Block implements Moveable {
         for (Part part : this.parts) {
             part.moveDown();
         }
+        this.y++;
     }
 
     @Override
@@ -41,6 +42,7 @@ public abstract class Block implements Moveable {
         for (Part part : this.parts) {
             part.moveLeft();
         }
+        this.x--;
     }
 
     @Override
@@ -48,6 +50,7 @@ public abstract class Block implements Moveable {
         for (Part part : this.parts) {
             part.moveRight();
         }
+        this.x++;
     }
 
     public void rotateRight() {

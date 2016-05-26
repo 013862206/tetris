@@ -15,8 +15,8 @@ public class Part implements Moveable {
     private int y;
 
     public Part(int x, int y) {
-        x = x;
-        y = y;
+        this.x = x;
+        this.y = y;
     }
 
     public void move(int dx, int dy) {
@@ -40,8 +40,8 @@ public class Part implements Moveable {
     }
 
     public void newCoordinates(int x, int y) {
-        x = x;
-        y = y;
+        this.x = x;
+        this.y = y;
     }
 
     public int getXCoordinate() {

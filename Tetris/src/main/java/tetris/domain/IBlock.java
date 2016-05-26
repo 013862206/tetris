@@ -12,24 +12,10 @@ package tetris.domain;
 public class IBlock extends Block {
 
     public IBlock(int x, int y) {
-        super();
+        super(x, y);
         parts[0] = (new Part(x, y - 1));
         parts[1] = (new Part(x, y));
         parts[2] = (new Part(x, y + 1));
         parts[3] = (new Part(x, y + 2));
     }
-    
-    
-
-    @Override
-    public void rotateRight() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void rotateLeft() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-
 }

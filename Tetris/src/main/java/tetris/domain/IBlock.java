@@ -18,10 +18,18 @@ public class IBlock extends Block {
         parts[2] = (new Part(x, y + 1));
         parts[3] = (new Part(x, y + 2));
     }
+    
+    
 
     @Override
-    void rotate() {
+    public void rotateRight() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void rotateLeft() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 
 }

@@ -20,7 +20,7 @@ public class OBlock extends Block {
     }
 
     @Override
-    void rotate() {
+    public void rotate() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

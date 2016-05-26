@@ -11,44 +11,44 @@ package tetris.domain;
  */
 public class Part implements Moveable {
 
-    private int xCoord;
-    private int yCoord;
+    private int x;
+    private int y;
 
     public Part(int x, int y) {
-        xCoord = x;
-        yCoord = y;
+        x = x;
+        y = y;
     }
 
     public void move(int dx, int dy) {
-        xCoord += dx;
-        yCoord += dy;
+        x += dx;
+        y += dy;
     }
 
     @Override
     public void moveDown() {
-        yCoord += 1;
+        y += 1;
     }
 
     @Override
     public void moveRight() {
-        xCoord += 1;
+        x += 1;
     }
 
     @Override
     public void moveLeft() {
-        xCoord -= 1;
+        x -= 1;
     }
 
     public void newCoordinates(int x, int y) {
-        xCoord = x;
-        yCoord = y;
+        x = x;
+        y = y;
     }
 
-    public int getXCoord() {
-        return xCoord;
+    public int getXCoordinate() {
+        return x;
     }
 
-    public int getYCoord() {
-        return yCoord;
+    public int getYCoordinate() {
+        return y;
     }
 }

@@ -14,6 +14,8 @@ import java.util.*;
 public abstract class Block implements Moveable {
 
     protected Part[] parts;
+    protected int x;
+    protected int y;
 
     public Block() {
         this.parts = new Part[4];
@@ -46,5 +48,7 @@ public abstract class Block implements Moveable {
         }
     }
 
-    abstract void rotate();
+    abstract public void rotateRight();
+    
+    abstract public void rotateLeft();
 }

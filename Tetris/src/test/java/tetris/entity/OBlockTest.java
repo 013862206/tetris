@@ -17,29 +17,59 @@ import static org.junit.Assert.*;
  * @author luhtalam
  */
 public class OBlockTest {
-    
-    public OBlockTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
+
+    OBlock block;
+    int x, y;
+
     @Before
     public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+        x = 3;
+        y = 4;
+        block = new OBlock(x, y);
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    @Test
+    public void testConstructorSetsPositionsRight() {
+        assertEquals(x, block.getParts()[0].getXCoordinate());
+        assertEquals(y, block.getParts()[0].getYCoordinate());
+        assertEquals(x, block.getParts()[1].getXCoordinate());
+        assertEquals(y - 1, block.getParts()[1].getYCoordinate());
+        assertEquals(x + 1, block.getParts()[2].getXCoordinate());
+        assertEquals(y - 1, block.getParts()[2].getYCoordinate());
+        assertEquals(x + 1, block.getParts()[3].getXCoordinate());
+        assertEquals(y, block.getParts()[3].getYCoordinate());
+    }
+
+    @Test
+    public void testMoveDownSetsCoordinatesRight() {
+        block.moveDown();
+        assertEquals(x, block.getX());
+        assertEquals(y + 1, block.getY());
+    }
+
+    @Test
+    public void testRotateRightDoesNotDoAnything() {
+        block.rotateRight();
+        assertEquals(x, block.getParts()[0].getXCoordinate());
+        assertEquals(y, block.getParts()[0].getYCoordinate());
+        assertEquals(x, block.getParts()[1].getXCoordinate());
+        assertEquals(y - 1, block.getParts()[1].getYCoordinate());
+        assertEquals(x + 1, block.getParts()[2].getXCoordinate());
+        assertEquals(y - 1, block.getParts()[2].getYCoordinate());
+        assertEquals(x + 1, block.getParts()[3].getXCoordinate());
+        assertEquals(y, block.getParts()[3].getYCoordinate());
+    }
+
+    @Test
+    public void testRotateLeftDoesNotDoAnything() {
+        block.rotateLeft();
+        assertEquals(x, block.getParts()[0].getXCoordinate());
+        assertEquals(y, block.getParts()[0].getYCoordinate());
+        assertEquals(x, block.getParts()[1].getXCoordinate());
+        assertEquals(y - 1, block.getParts()[1].getYCoordinate());
+        assertEquals(x + 1, block.getParts()[2].getXCoordinate());
+        assertEquals(y - 1, block.getParts()[2].getYCoordinate());
+        assertEquals(x + 1, block.getParts()[3].getXCoordinate());
+        assertEquals(y, block.getParts()[3].getYCoordinate());
+    }
 }

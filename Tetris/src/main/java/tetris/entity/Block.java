@@ -53,7 +53,7 @@ public abstract class Block implements Moveable {
         this.x++;
     }
 
-    public void rotateRight() {
+    public void rotateLeft() {
         move(-x, -y);
         int newX, newY;
         for (Part part : parts) {
@@ -64,7 +64,7 @@ public abstract class Block implements Moveable {
         move(x, y);
     }
 
-    public void rotateLeft() {
+    public void rotateRight() {
         move(-x, -y);
         int newX, newY;
         for (Part part : parts) {

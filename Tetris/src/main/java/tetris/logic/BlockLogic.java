@@ -14,8 +14,11 @@ import tetris.entity.*;
 public class BlockLogic {
 
     public boolean canCreate(Table table, Block block) {
+        int x, y;
         for (Part part : block.getParts()) {
-            if (!table.isFree(part.getXCoordinate(), part.getYCoordinate())) {
+            x = part.getXCoordinate();
+            y = part.getYCoordinate();
+            if (!table.isFree(x, y)) {
                 return false;
             }
         }
@@ -23,11 +26,14 @@ public class BlockLogic {
     }
 
     public boolean canMoveDown(Table table, Block block) {
+        int x, y;
         for (Part part : block.getParts()) {
-            if (part.getYCoordinate() == table.getHeight()) {
+            x = part.getXCoordinate();
+            y = part.getYCoordinate();
+            if (y == table.getHeight()) {
                 return false;
             }
-            if (!table.isFree(part.getXCoordinate(), part.getYCoordinate() + 1)) {
+            if (!table.isFree(x, y + 1)) {
                 return false;
             }
         }
@@ -35,11 +41,14 @@ public class BlockLogic {
     }
 
     public boolean canMoveLeft(Table table, Block block) {
+        int x, y;
         for (Part part : block.getParts()) {
-            if (part.getXCoordinate() == 0) {
+            x = part.getXCoordinate();
+            y = part.getYCoordinate();
+            if (x == 0) {
                 return false;
             }
-            if (!table.isFree(part.getXCoordinate() - 1, part.getYCoordinate())) {
+            if (!table.isFree(x - 1, y)) {
                 return false;
             }
         }
@@ -47,11 +56,14 @@ public class BlockLogic {
     }
 
     public boolean canMoveRight(Table table, Block block) {
+        int x, y;
         for (Part part : block.getParts()) {
-            if (part.getXCoordinate() == table.getWidth()) {
+            x = part.getXCoordinate();
+            y = part.getYCoordinate();
+            if (x == table.getWidth()) {
                 return false;
             }
-            if (!table.isFree(part.getXCoordinate() + 1, part.getYCoordinate())) {
+            if (!table.isFree(x + 1, y)) {
                 return false;
             }
         }
@@ -69,5 +81,4 @@ public class BlockLogic {
         }
         return true;
     }
-
 }

@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package teris.logic;
+package tetris.logic;
 
 /**
  *
  * @author luhtalam
  */
-public class TableLogic {
+public class PointLogic {
     
 }

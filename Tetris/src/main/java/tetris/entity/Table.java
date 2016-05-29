@@ -24,7 +24,7 @@ public class Table {
     }
     
     public boolean isFree(int x, int y) {
-        return table[y][x];
+        return !table[y][x];
     }
 
     public boolean[][] getTable() {

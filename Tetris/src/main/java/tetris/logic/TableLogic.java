@@ -5,10 +5,45 @@
  */
 package tetris.logic;
 
+import java.util.ArrayList;
+import tetris.entity.Table;
+
 /**
  *
  * @author luhtalam
  */
 public class TableLogic {
-    
+
+    public ArrayList<Integer> getFullRows(Table table) {
+        ArrayList<Integer> fullRows = new ArrayList();
+        boolean fullRow;
+        for (int y = 0; y <= table.getHeight(); y++) {
+            fullRow = true;
+            for (int x = 0; x <= table.getWidth(); x++) {
+                if (!table.getTable()[y][x]) {
+                    fullRow = false;
+                    break;
+                }
+            }
+            if (fullRow) {
+                fullRows.add(y);
+            }
+        }
+        return fullRows;
+    }
+
+    public void removeRows(Table table, ArrayList<Integer> rows) { //rivit jo oikeassa järjestyksessä edellisen metodin ansiosta
+        for (int row : rows) {
+            for (int y = row; y >= 0; y--) {
+                for (int x = 0; x <= table.getWidth(); x++) {
+                    if (y == 0) {
+                        table.getTable()[y][x] = false;
+                    } else {
+                        table.getTable()[y][x] = table.getTable()[y - 1][x];
+                    }
+                }
+            }
+        }
+    }
+
 }

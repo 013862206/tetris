@@ -5,6 +5,8 @@
  */
 package tetris.entity;
 
+import java.awt.Color;
+
 /**
  *
  * @author luhtalam
@@ -13,10 +15,12 @@ public class Part implements Moveable {
 
     private int x;
     private int y;
+    private Color color;
 
-    public Part(int x, int y) {
+    public Part(int x, int y, Color color) {
         this.x = x;
         this.y = y;
+        this.color = color;
     }
 
     public void move(int dx, int dy) {
@@ -50,5 +54,9 @@ public class Part implements Moveable {
 
     public int getYCoordinate() {
         return y;
+    }
+    
+    public Color getColor() {
+        return color;
     }
 }

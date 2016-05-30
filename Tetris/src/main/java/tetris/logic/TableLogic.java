@@ -14,7 +14,7 @@ import tetris.entity.Table;
  */
 public class TableLogic {
 
-    public ArrayList<Integer> getFullRows(Table table) {
+    public static ArrayList<Integer> getFullRows(Table table) {
         ArrayList<Integer> fullRows = new ArrayList();
         boolean fullRow;
         for (int y = 0; y <= table.getHeight(); y++) {
@@ -32,7 +32,7 @@ public class TableLogic {
         return fullRows;
     }
 
-    public void removeRows(Table table, ArrayList<Integer> rows) { //rivit jo oikeassa järjestyksessä edellisen metodin ansiosta
+    public static void removeRows(Table table, ArrayList<Integer> rows) { //rivit jo oikeassa järjestyksessä edellisen metodin ansiosta
         for (int row : rows) {
             for (int y = row; y >= 0; y--) {
                 for (int x = 0; x <= table.getWidth(); x++) {

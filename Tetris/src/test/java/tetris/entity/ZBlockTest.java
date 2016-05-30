@@ -5,6 +5,7 @@
  */
 package tetris.entity;
 
+import java.awt.Color;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -20,12 +21,14 @@ public class ZBlockTest {
 
     ZBlock block;
     int x, y;
+    Color color;
 
     @Before
     public void setUp() {
         x = 3;
         y = 4;
-        block = new ZBlock(x, y);
+        color = Color.BLACK;
+        block = new ZBlock(x, y, color);
     }
 
     @Test
@@ -38,6 +41,13 @@ public class ZBlockTest {
         assertEquals(y - 1, block.getParts()[2].getYCoordinate());
         assertEquals(x - 1, block.getParts()[3].getXCoordinate());
         assertEquals(y - 1, block.getParts()[3].getYCoordinate());
+    }
+
+    @Test
+    public void testConstructorSetsColorsRight() {
+        for (Part part : block.getParts()) {
+            assertEquals(color, part.getColor());
+        }
     }
 
     @Test

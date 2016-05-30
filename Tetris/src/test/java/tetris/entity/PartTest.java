@@ -13,6 +13,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import java.awt.Color;
+
 /**
  *
  * @author luhtalam
@@ -20,109 +22,106 @@ import static org.junit.Assert.*;
 public class PartTest {
 
     private Part part;
+    int x, y;
+    Color color;
+
+    @Before
+    public void setUp() {
+        this.x = 3;
+        this.y = 2;
+        color = Color.WHITE;
+        part = new Part(x, y, color);
+    }
 
     @Test
     public void testConstructorXCoordIsRight() {
-        int x = 3;
-        this.part = new Part(x, 2);
         assertEquals(x, part.getXCoordinate());
     }
 
     @Test
     public void testConstructorYCoordIsRight() {
-        int y = 2;
-        this.part = new Part(3, y);
         assertEquals(y, part.getYCoordinate());
     }
 
     @Test
+    public void testConstructorSetsColorRight() {
+        assertEquals(color, part.getColor());
+    }
+
+    @Test
     public void testMoveDxIsZero() {
-        int x = 2;
         int dx = 0;
-        part = new Part(x, 2);
         part.move(dx, 0);
         assertEquals(x, part.getXCoordinate());
     }
 
     @Test
     public void testMoveDxIsPositive() {
-        int x = 2;
         int dx = 5;
-        part = new Part(x, 3);
         part.move(dx, 0);
         assertEquals(x + dx, part.getXCoordinate());
     }
 
     @Test
     public void testMoveDxIsNegative() {
-        int x = 2;
         int dx = -3;
-        part = new Part(x, 3);
         part.move(dx, 0);
         assertEquals(x + dx, part.getXCoordinate());
     }
 
     @Test
     public void testMoveDyIsZero() {
-        int y = 2;
         int dy = 0;
-        part = new Part(1, y);
         part.move(0, dy);
         assertEquals(y, part.getYCoordinate());
     }
 
     @Test
     public void testMoveDyIsPositive() {
-        int y = 2;
         int dy = 3;
-        part = new Part(1, y);
         part.move(0, dy);
         assertEquals(y + dy, part.getYCoordinate());
     }
 
     @Test
     public void testMoveDyIsNegative() {
-        int y = 2;
         int dy = -3;
-        part = new Part(1, y);
         part.move(0, dy);
         assertEquals(y + dy, part.getYCoordinate());
     }
 
     @Test
     public void testMoveDown() {
-        part = new Part(0, 0);
         part.moveDown();
-        assertEquals(1, part.getYCoordinate());
+        assertEquals(this.y + 1, part.getYCoordinate());
+        assertEquals(this.x, part.getXCoordinate());
     }
 
     @Test
     public void testMoveRight() {
-        part = new Part(0, 0);
         part.moveRight();
-        assertEquals(1, part.getXCoordinate());
+        assertEquals(this.x + 1, part.getXCoordinate());
+        assertEquals(this.y, part.getYCoordinate());
     }
 
     @Test
     public void testMoveLeft() {
-        part = new Part(1, 1);
         part.moveLeft();
-        assertEquals(0, part.getXCoordinate());
+        assertEquals(this.x - 1, part.getXCoordinate());
+        assertEquals(this.y, part.getYCoordinate());
     }
 
     @Test
     public void testNewCoordinatesXIsRight() {
-        int x = 4;
-        part = new Part(2, 3);
-        part.newCoordinates(x, 0);
-        assertEquals(x, part.getXCoordinate());
+        int newX = 4;
+        part.newCoordinates(newX, 0);
+        assertEquals(newX, part.getXCoordinate());
     }
 
     @Test
     public void testNewCoordinatesYIsRight() {
-        int y = 3;
-        part = new Part(2, 3);
-        part.newCoordinates(0, y);
-        assertEquals(y, part.getYCoordinate());
+        int newY = 3;
+        part.newCoordinates(0, newY);
+        assertEquals(newY, part.getYCoordinate());
     }
 }

@@ -5,6 +5,7 @@
  */
 package tetris.entity;
 
+import java.awt.Color;
 import tetris.entity.IBlock;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -21,12 +22,14 @@ public class IBlockTest {
 
     IBlock block;
     int x, y;
+    Color color;
 
     @Before
     public void setUp() {
         x = 3;
         y = 4;
-        block = new IBlock(x, y);
+        color = Color.BLACK;
+        block = new IBlock(x, y, color);
     }
 
     @Test
@@ -34,6 +37,13 @@ public class IBlockTest {
         for (int i = 0; i < 4; i++) {
             assertEquals(x, block.getParts()[i].getXCoordinate());
             assertEquals(y - 1 + i, block.getParts()[i].getYCoordinate());
+        }
+    }
+    
+    @Test
+    public void testConstructorSetsColorsRight() {
+        for (Part part : block.getParts()) {
+            assertEquals(color, part.getColor());
         }
     }
 

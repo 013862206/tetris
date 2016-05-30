@@ -13,7 +13,7 @@ import tetris.entity.*;
  */
 public class BlockLogic {
 
-    public boolean canCreate(Table table, Block block) {
+    public static boolean canPlace(Table table, Block block) {
         int x, y;
         for (Part part : block.getParts()) {
             x = part.getXCoordinate();
@@ -25,7 +25,7 @@ public class BlockLogic {
         return true;
     }
 
-    public boolean canMoveDown(Table table, Block block) {
+    public static boolean canMoveDown(Table table, Block block) {
         int x, y;
         for (Part part : block.getParts()) {
             x = part.getXCoordinate();
@@ -40,7 +40,7 @@ public class BlockLogic {
         return true;
     }
 
-    public boolean canMoveLeft(Table table, Block block) {
+    public static boolean canMoveLeft(Table table, Block block) {
         int x, y;
         for (Part part : block.getParts()) {
             x = part.getXCoordinate();
@@ -55,7 +55,7 @@ public class BlockLogic {
         return true;
     }
 
-    public boolean canMoveRight(Table table, Block block) {
+    public static boolean canMoveRight(Table table, Block block) {
         int x, y;
         for (Part part : block.getParts()) {
             x = part.getXCoordinate();
@@ -70,7 +70,7 @@ public class BlockLogic {
         return true;
     }
 
-    public boolean isInTable(Table table, Block block) {
+    public static boolean isInTable(Table table, Block block) {
         int x, y;
         for (Part part : block.getParts()) {
             x = part.getXCoordinate();
@@ -80,5 +80,31 @@ public class BlockLogic {
             }
         }
         return true;
+    }
+
+    public static boolean canRotateRight(Table table, Block block) {
+        block.rotateRight();
+        if (BlockLogic.isInTable(table, block)) {
+            if (BlockLogic.canPlace(table, block)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean canRotateLeft(Table table, Block block) {
+        block.rotateLeft();
+        if (BlockLogic.isInTable(table, block)) {
+            if (BlockLogic.canPlace(table, block)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 }

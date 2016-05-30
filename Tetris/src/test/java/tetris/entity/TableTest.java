@@ -5,12 +5,15 @@
  */
 package tetris.entity;
 
+import java.awt.Color;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+
+import java.awt.Color;
 
 import tetris.entity.Table;
 
@@ -42,7 +45,7 @@ public class TableTest {
 
     @Test
     public void testAddBlockWorks() {
-        JBlock block = new JBlock(5, 5);
+        JBlock block = new JBlock(5, 5, Color.BLACK);
         table.addBlock(block);
         int x, y;
         for (Part part : block.getParts()) {
@@ -60,7 +63,7 @@ public class TableTest {
 
     @Test
     public void testIsFreeReturnFalseWhenNotFree() {
-        table.getTable()[5][5] = new Part(5, 5);
+        table.getTable()[5][5] = new Part(5, 5, Color.BLACK);
         assertFalse(table.isFree(5, 5));
     }
 

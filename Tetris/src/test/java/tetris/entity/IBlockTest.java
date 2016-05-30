@@ -45,6 +45,33 @@ public class IBlockTest {
     }
 
     @Test
+    public void testMoveSetsXRight() {
+        int dx = 5;
+        int dy = 5;
+        block.move(dx, dy);
+        assertEquals(x + dx, block.getX());
+    }
+
+    @Test
+    public void testMoveSetsYRight() {
+        int dx = 5;
+        int dy = 5;
+        block.move(dx, dy);
+        assertEquals(y + dy, block.getY());
+    }
+
+    @Test
+    public void testMoveMovesEveryPart() {
+        int dx = 5;
+        int dy = 5;
+        block.move(dx, dy);
+        for (int i = 0; i < 4; i++) {
+            assertEquals(x + dx, block.getParts()[i].getXCoordinate());
+            assertEquals(y - 1 + i + dy, block.getParts()[i].getYCoordinate());
+        }
+    }
+
+    @Test
     public void testMoveDownMovesEveryPartRight() {
         block.moveDown();
         for (int i = 0; i < 4; i++) {

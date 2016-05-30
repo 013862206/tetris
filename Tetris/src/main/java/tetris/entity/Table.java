@@ -11,23 +11,27 @@ package tetris.entity;
  */
 public class Table {
 
-    private boolean[][] table;
+    private Part[][] table;
 
     public Table(int width, int height) {
-        this.table = new boolean[height][width];
+        this.table = new Part[height][width];
     }
 
     public void addBlock(Block block) {
         for (Part part : block.getParts()) {
-            table[part.getYCoordinate()][part.getXCoordinate()] = true;
+            table[part.getYCoordinate()][part.getXCoordinate()] = part;
         }
     }
     
     public boolean isFree(int x, int y) {
-        return !table[y][x];
+        if (table[y][x] == null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public boolean[][] getTable() {
+    public Part[][] getTable() {
         return this.table;
     }
     

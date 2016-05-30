@@ -48,27 +48,27 @@ public class TableTest {
         for (Part part : block.getParts()) {
             x = part.getXCoordinate();
             y = part.getYCoordinate();
-            assertTrue(table.getTable()[y][x]);
+            assertEquals(part, table.getTable()[y][x]);
         }
     }
 
     @Test
     public void testIsFreeReturnTrueWhenFree() {
-        table.getTable()[5][5] = false;
+        table.getTable()[5][5] = null;
         assertTrue(table.isFree(5, 5));
     }
 
     @Test
     public void testIsFreeReturnFalseWhenNotFree() {
-        table.getTable()[5][5] = true;
+        table.getTable()[5][5] = new Part(5, 5);
         assertFalse(table.isFree(5, 5));
     }
-    
+
     @Test
     public void testGetHeight() {
         assertEquals(this.y, table.getHeight());
     }
-    
+
     @Test
     public void testGetwidth() {
         assertEquals(this.x, table.getWidth());

@@ -20,7 +20,7 @@ public class TableLogic {
         for (int y = 0; y <= table.getHeight(); y++) {
             fullRow = true;
             for (int x = 0; x <= table.getWidth(); x++) {
-                if (!table.getTable()[y][x]) {
+                if (table.isFree(x, y)) {
                     fullRow = false;
                     break;
                 }
@@ -37,7 +37,7 @@ public class TableLogic {
             for (int y = row; y >= 0; y--) {
                 for (int x = 0; x <= table.getWidth(); x++) {
                     if (y == 0) {
-                        table.getTable()[y][x] = false;
+                        table.getTable()[y][x] = null;
                     } else {
                         table.getTable()[y][x] = table.getTable()[y - 1][x];
                     }

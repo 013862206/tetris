@@ -27,6 +27,8 @@ public abstract class Block implements Moveable {
         for (Part part : this.parts) {
             part.move(dx, dy);
         }
+        this.x += dx;
+        this.y += dy;
     }
 
     @Override
@@ -54,25 +56,29 @@ public abstract class Block implements Moveable {
     }
 
     public void rotateLeft() {
-        move(-x, -y);
+        int dx = this.x;
+        int dy = this.y;
+        move(-dx, -dy);
         int newX, newY;
         for (Part part : parts) {
             newX = part.getYCoordinate();
             newY = -part.getXCoordinate();
             part.newCoordinates(newX, newY);
         }
-        move(x, y);
+        move(dx, dy);
     }
 
     public void rotateRight() {
-        move(-x, -y);
+        int dx = this.x;
+        int dy = this.y;
+        move(-dx, -dy);
         int newX, newY;
         for (Part part : parts) {
             newX = -part.getYCoordinate();
             newY = part.getXCoordinate();
             part.newCoordinates(newX, newY);
         }
-        move(x, y);
+        move(dx, dy);
     }
 
     public Part[] getParts() {

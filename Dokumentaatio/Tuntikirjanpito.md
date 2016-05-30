@@ -8,3 +8,4 @@ Päivä | Tunnit | Kuvaus
 26.05.2016 | 5 h | Peli palikoiden koodaamista ja niiden metodien sekä testien kirjoittelua, githubin kanssa painimista (push ei toiminut) ja luokkakaavion luominen. Luokkakaaviosta täytyy kysyä miten perinnän saa yhden nuolen alle...
 27.05.2016 | 1 h | Testien kirjoittelua
 29.05.2016 | 2 h | seuraavan viikon ohjeiden lukeminen ja pelilogiikan koodaamisen aloittaminen sekä table-luokan testit
+30.05.2016 | 4.5 h | pelilogiikan luominen lähes loppuun, tablelin muuttaminen part-taulukoksi, värien lisääminen palikoihin ja testien päivittämistä

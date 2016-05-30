@@ -49,11 +49,4 @@ public class JBlockTest {
             assertEquals(color, part.getColor());
         }
     }
-
-    @Test
-    public void testMoveDownSetsCoordinatesRight() {
-        block.moveDown();
-        assertEquals(x, block.getX());
-        assertEquals(y + 1, block.getY());
-    }
 }

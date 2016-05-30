@@ -51,13 +51,6 @@ public class OBlockTest {
     }
 
     @Test
-    public void testMoveDownSetsCoordinatesRight() {
-        block.moveDown();
-        assertEquals(x, block.getX());
-        assertEquals(y + 1, block.getY());
-    }
-
-    @Test
     public void testRotateRightDoesNotDoAnything() {
         block.rotateRight();
         assertEquals(x, block.getParts()[0].getXCoordinate());

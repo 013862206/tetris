@@ -84,7 +84,7 @@ public class Game { //add getCurrentSituation! GhostBlock??
     public void checkTable() {
         ArrayList<Integer> fullRows = TableLogic.getFullRows(table);
         int rows = fullRows.size();
-        points.increasePoints(rows);
+        points.addPoints(rows);
         TableLogic.removeRows(this.table, fullRows);
     }
 

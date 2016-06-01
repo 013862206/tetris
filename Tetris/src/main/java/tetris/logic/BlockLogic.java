@@ -30,7 +30,7 @@ public class BlockLogic {
         for (Part part : block.getParts()) {
             x = part.getXCoordinate();
             y = part.getYCoordinate();
-            if (y == table.getHeight()) {
+            if (y == table.getHeight() - 1) {
                 return false;
             }
             if (!table.isFree(x, y + 1)) {
@@ -60,7 +60,7 @@ public class BlockLogic {
         for (Part part : block.getParts()) {
             x = part.getXCoordinate();
             y = part.getYCoordinate();
-            if (x == table.getWidth()) {
+            if (x == table.getWidth() - 1) {
                 return false;
             }
             if (!table.isFree(x + 1, y)) {
@@ -75,7 +75,7 @@ public class BlockLogic {
         for (Part part : block.getParts()) {
             x = part.getXCoordinate();
             y = part.getYCoordinate();
-            if (x < 0 || x > table.getWidth() || y < 0 || y > table.getHeight()) {
+            if (x < 0 || x > table.getWidth() - 1 || y < 0 || y > table.getHeight() - 1) {
                 return false;
             }
         }

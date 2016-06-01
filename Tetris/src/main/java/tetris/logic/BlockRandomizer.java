@@ -43,4 +43,12 @@ public class BlockRandomizer {
             return new ZBlock(x, y, Color.MAGENTA);
         }
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
 }

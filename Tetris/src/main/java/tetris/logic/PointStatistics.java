@@ -27,18 +27,21 @@ public class PointStatistics {
         this.blocks++;
     }
 
-    public void increasePoints(int rows) {
+    public void addPoints(int rows) {
         if (rows == 0) {
             return; //add few points?
         } else if (rows == 1) {
             points += 40 * this.gameLevel;
             lines++;
+            return;
         } else if (rows == 2) {
             points += 100 * this.gameLevel;
             lines += 2;
+            return;
         } else if (rows == 3) {
             points += 300 * this.gameLevel;
             lines += 3;
+            return;
         } else {
             points += 1200 * this.gameLevel;
             lines += 4;

@@ -83,28 +83,26 @@ public class BlockLogic {
     }
 
     public static boolean canRotateRight(Table table, Block block) {
+        boolean isPossible = false;
         block.rotateRight();
         if (BlockLogic.isInTable(table, block)) {
             if (BlockLogic.canPlace(table, block)) {
-                return true;
-            } else {
-                return false;
+                isPossible = true;
             }
-        } else {
-            return false;
         }
+        block.rotateLeft();
+        return isPossible;
     }
 
     public static boolean canRotateLeft(Table table, Block block) {
+        boolean isPossible = false;
         block.rotateLeft();
         if (BlockLogic.isInTable(table, block)) {
             if (BlockLogic.canPlace(table, block)) {
-                return true;
-            } else {
-                return false;
+                isPossible = true;
             }
-        } else {
-            return false;
         }
+        block.rotateRight();
+        return isPossible;
     }
 }

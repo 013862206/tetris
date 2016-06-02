@@ -9,4 +9,5 @@ Päivä | Tunnit | Kuvaus
 27.05.2016 | 1 h | Testien kirjoittelua
 29.05.2016 | 2 h | seuraavan viikon ohjeiden lukeminen ja pelilogiikan koodaamisen aloittaminen sekä table-luokan testit
 30.05.2016 | 4.5 h | pelilogiikan luominen lähes loppuun, tablelin muuttaminen part-taulukoksi, värien lisääminen palikoihin ja testien päivittämistä
-31.05.2015 | 2.5 h | Iso kasa logiikan testejä. Täytyy kysyä miten drawBlock randomin voisi testata!
+31.05.2016 | 2.5 h | Iso kasa logiikan testejä. Täytyy kysyä miten drawBlock randomin voisi testata!
+02.06.2016 | 2.5 | Lisää logiikan testejä, nimeämisen kanssa sähläämistä ja luokkakaavion päivittämistä

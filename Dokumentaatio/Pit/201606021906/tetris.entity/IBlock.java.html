@@ -1,0 +1,452 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+	border: 1px solid #dddddd;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-family: Consolas, Courier, monospace;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+
+.pop {outline:none; }
+.pop strong {line-height:30px;}
+.pop {text-decoration:none;}
+.pop span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:800px; line-height:16px; word-wrap:break-word; }
+.pop:hover span{ display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0;}
+
+.pop span { border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+</style>
+
+</head>
+<body>
+
+
+<h1>IBlock.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_1'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/*</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_2'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * To change this license header, choose License Headers in Project Properties.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_3'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * To change this template file, choose Tools | Templates</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_4'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * and open the template in the editor.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_5'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_6'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package tetris.entity;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_7'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_8'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.awt.Color;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_9'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_10'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_11'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_12'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * @author luhtalam</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_13'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_14'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class IBlock extends Block {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_15'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_16'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public IBlock(int x, int y, Color color) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_17'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        super(x, y);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_18'/>
+18
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_18'>1</a>
+<span>
+1. <init> : Replaced integer subtraction with addition &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        parts[0] = new Part(x, y - 1, color);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_19'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        parts[1] = new Part(x, y, color);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_20'/>
+20
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_20'>1</a>
+<span>
+1. <init> : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        parts[2] = new Part(x, y + 1, color);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_21'/>
+21
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_21'>1</a>
+<span>
+1. <init> : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        parts[3] = new Part(x, y + 2, color);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_22'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@265c1a7c_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_23'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@265c1a7c_18'>18</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_18'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>tetris.entity.IBlockTest.testConstructorSetsPositionsRight(tetris.entity.IBlockTest)</span></span> Replaced integer subtraction with addition &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@265c1a7c_20'>20</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_20'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>tetris.entity.IBlockTest.testConstructorSetsPositionsRight(tetris.entity.IBlockTest)</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@265c1a7c_21'>21</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@265c1a7c_21'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>tetris.entity.IBlockTest.testConstructorSetsPositionsRight(tetris.entity.IBlockTest)</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+<li class='mutator'>MATH_MUTATOR</li>
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>tetris.entity.BlockTest.testMoveMovesEveryPart(tetris.entity.BlockTest) (3 ms)</li><li>tetris.logic.BlockLogicMovementTest.testCanMoveLeftWhenFreeSpace(tetris.logic.BlockLogicMovementTest) (1 ms)</li><li>tetris.entity.BlockTest.testMoveSetsYRight(tetris.entity.BlockTest) (7 ms)</li><li>tetris.logic.BlockLogicMovementTest.testCanNotMoveDownOverTheBorder(tetris.logic.BlockLogicMovementTest) (1 ms)</li><li>tetris.entity.BlockTest.testMoveDownSetsCoordinatesRight(tetris.entity.BlockTest) (1 ms)</li><li>tetris.logic.BlockLogicMovementTest.testCanNotMoveRightWhenNotFreeSpace(tetris.logic.BlockLogicMovementTest) (1 ms)</li><li>tetris.entity.BlockTest.testMoveLeftSetsCoordinatesRight(tetris.entity.BlockTest) (3 ms)</li><li>tetris.entity.BlockTest.testRotateRightFourTimes(tetris.entity.BlockTest) (1 ms)</li><li>tetris.logic.BlockLogicRotationTest.testCanNotRotateLeftOverUpperBorder(tetris.logic.BlockLogicRotationTest) (1 ms)</li><li>tetris.logic.BlockLogicMovementTest.testCanNotMoveLeftWhenNotFreeSpace(tetris.logic.BlockLogicMovementTest) (0 ms)</li><li>tetris.logic.BlockLogicRotationTest.testIsInTableTrue(tetris.logic.BlockLogicRotationTest) (1 ms)</li><li>tetris.logic.BlockLogicRotationTest.testIsInTableFalseOverBottomEdge(tetris.logic.BlockLogicRotationTest) (1 ms)</li><li>tetris.logic.GameTest.testConstructorSetsTableWidthRight(tetris.logic.GameTest) (6 ms)</li><li>tetris.logic.BlockLogicRotationTest.testCanNotRotateRightOverLeftBorder(tetris.logic.BlockLogicRotationTest) (3 ms)</li><li>tetris.logic.BlockLogicRotationTest.testCanNotRotateLeftOverRightBorder(tetris.logic.BlockLogicRotationTest) (0 ms)</li><li>tetris.entity.BlockTest.testRotateLeftTwoTimes(tetris.entity.BlockTest) (1 ms)</li><li>tetris.logic.BlockLogicRotationTest.testCanNotRotateRightOverRightBorder(tetris.logic.BlockLogicRotationTest) (3 ms)</li><li>tetris.logic.GameTest.testConstructorSetsGameLevelRight(tetris.logic.GameTest) (1 ms)</li><li>tetris.entity.BlockTest.testMoveRightSetsCoordinatesRight(tetris.entity.BlockTest) (0 ms)</li><li>tetris.logic.BlockLogicRotationTest.testIsInTableFalseOverRightEdge(tetris.logic.BlockLogicRotationTest) (1 ms)</li><li>tetris.entity.BlockTest.testMoveDownMovesEveryPartRight(tetris.entity.BlockTest) (1 ms)</li><li>tetris.logic.BlockLogicRotationTest.testIsInTableTrueRightBottomCorner(tetris.logic.BlockLogicRotationTest) (0 ms)</li><li>tetris.logic.BlockLogicRotationTest.testCanNotRotateRightOverUpperBorder(tetris.logic.BlockLogicRotationTest) (1 ms)</li><li>tetris.logic.BlockLogicRotationTest.testCanNotRotateRightWhenNotSpace(tetris.logic.BlockLogicRotationTest) (1 ms)</li><li>tetris.entity.BlockTest.testConstructorSetsCoordinatesRight(tetris.entity.BlockTest) (298 ms)</li><li>tetris.entity.BlockTest.testRotateLeftFourTimes(tetris.entity.BlockTest) (2 ms)</li><li>tetris.logic.BlockLogicMovementTest.testCanNotMoveLeftOverTheBorder(tetris.logic.BlockLogicMovementTest) (0 ms)</li><li>tetris.logic.BlockLogicMovementTest.testCanMoveDownWhenFreeSpace(tetris.logic.BlockLogicMovementTest) (1 ms)</li><li>tetris.entity.BlockTest.testMoveRightMovesEveryPartRight(tetris.entity.BlockTest) (1 ms)</li><li>tetris.logic.BlockLogicRotationTest.testIsInTableFalseOverLeftEdge(tetris.logic.BlockLogicRotationTest) (1 ms)</li><li>tetris.logic.BlockLogicRotationTest.testIsInTableTrueLeftUpperCorner(tetris.logic.BlockLogicRotationTest) (0 ms)</li><li>tetris.entity.BlockTest.testRotateRightOneTime(tetris.entity.BlockTest) (8 ms)</li><li>tetris.entity.BlockTest.testRotateLeftOneTime(tetris.entity.BlockTest) (2 ms)</li><li>tetris.entity.IBlockTest.testConstructorSetsPositionsRight(tetris.entity.IBlockTest) (1 ms)</li><li>tetris.logic.BlockLogicMovementTest.testCanNotMoveDownWhenNotFreeSpace(tetris.logic.BlockLogicMovementTest) (1 ms)</li><li>tetris.logic.BlockLogicRotationTest.testCanNotRotateLeftOverBottomBorder(tetris.logic.BlockLogicRotationTest) (1 ms)</li><li>tetris.entity.IBlockTest.testConstructorSetsColorsRight(tetris.entity.IBlockTest) (1 ms)</li><li>tetris.entity.BlockTest.testRotateLeftThreeTimes(tetris.entity.BlockTest) (1 ms)</li><li>tetris.logic.BlockLogicRotationTest.testCanRotateLeftWhenFreeSpace(tetris.logic.BlockLogicRotationTest) (1 ms)</li><li>tetris.logic.GameTest.testConstructorSetsTableHeightRight(tetris.logic.GameTest) (5 ms)</li><li>tetris.entity.BlockTest.testRotateRightThreeTimes(tetris.entity.BlockTest) (2 ms)</li><li>tetris.logic.BlockLogicRotationTest.testCanNotRotateRightOverBottomBorder(tetris.logic.BlockLogicRotationTest) (22 ms)</li><li>tetris.logic.BlockLogicMovementTest.testCanMoveRightWhenFreeSpace(tetris.logic.BlockLogicMovementTest) (1 ms)</li><li>tetris.logic.BlockLogicRotationTest.testCanRotateRightWhenFreeSpace(tetris.logic.BlockLogicRotationTest) (1 ms)</li><li>tetris.logic.BlockLogicRotationTest.testCannotRotateLeftWhenNotSpace(tetris.logic.BlockLogicRotationTest) (1 ms)</li><li>tetris.entity.BlockTest.testMoveSetsXRight(tetris.entity.BlockTest) (1 ms)</li><li>tetris.logic.BlockLogicRotationTest.testIsInTableFalseOverUpperEdge(tetris.logic.BlockLogicRotationTest) (3 ms)</li><li>tetris.logic.BlockLogicRotationTest.testCanNotRotateLeftOverLeftBorder(tetris.logic.BlockLogicRotationTest) (0 ms)</li><li>tetris.logic.BlockLogicMovementTest.testCanNotPlaceWhenNotFreePlace(tetris.logic.BlockLogicMovementTest) (0 ms)</li><li>tetris.entity.BlockTest.testMoveLeftMovesEveryPartRight(tetris.entity.BlockTest) (2 ms)</li><li>tetris.entity.BlockTest.testRotateRightTwoTimes(tetris.entity.BlockTest) (1 ms)</li><li>tetris.logic.BlockLogicMovementTest.testCanNotMoveRightOverTheBorder(tetris.logic.BlockLogicMovementTest) (0 ms)</li><li>tetris.logic.BlockLogicMovementTest.testCanPlaceWhenFreePlace(tetris.logic.BlockLogicMovementTest) (1 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.1.8
+
+</body>
+</html>

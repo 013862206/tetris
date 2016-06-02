@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2016</copyright>
     <item>
-      <title>File: 10,
+      <title>File: 16,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -46,7 +46,7 @@ under the License.
           <tbody>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#tetris.domain.Block.java">tetris/domain/Block.java</a>
+                  <a href="${project.url}/checkstyle.html#tetris.logic.BlockRandomizer.java">tetris/logic/BlockRandomizer.java</a>
                 </td>
                 <td>
                   0
@@ -60,7 +60,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#tetris.domain.JBlock.java">tetris/domain/JBlock.java</a>
+                  <a href="${project.url}/checkstyle.html#tetris.entity.TBlock.java">tetris/entity/TBlock.java</a>
                 </td>
                 <td>
                   0
@@ -74,7 +74,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#tetris.domain.OBlock.java">tetris/domain/OBlock.java</a>
+                  <a href="${project.url}/checkstyle.html#tetris.logic.Game.java">tetris/logic/Game.java</a>
                 </td>
                 <td>
                   0
@@ -88,7 +88,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#tetris.domain.SBlock.java">tetris/domain/SBlock.java</a>
+                  <a href="${project.url}/checkstyle.html#tetris.entity.LBlock.java">tetris/entity/LBlock.java</a>
                 </td>
                 <td>
                   0
@@ -102,7 +102,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#tetris.domain.IBlock.java">tetris/domain/IBlock.java</a>
+                  <a href="${project.url}/checkstyle.html#tetris.entity.Part.java">tetris/entity/Part.java</a>
                 </td>
                 <td>
                   0
@@ -116,7 +116,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#tetris.domain.Part.java">tetris/domain/Part.java</a>
+                  <a href="${project.url}/checkstyle.html#tetris.logic.BlockLogic.java">tetris/logic/BlockLogic.java</a>
                 </td>
                 <td>
                   0
@@ -130,7 +130,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#tetris.domain.TBlock.java">tetris/domain/TBlock.java</a>
+                  <a href="${project.url}/checkstyle.html#tetris.entity.JBlock.java">tetris/entity/JBlock.java</a>
                 </td>
                 <td>
                   0
@@ -144,7 +144,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#tetris.domain.LBlock.java">tetris/domain/LBlock.java</a>
+                  <a href="${project.url}/checkstyle.html#tetris.logic.TableLogic.java">tetris/logic/TableLogic.java</a>
                 </td>
                 <td>
                   0
@@ -158,7 +158,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#tetris.domain.ZBlock.java">tetris/domain/ZBlock.java</a>
+                  <a href="${project.url}/checkstyle.html#tetris.logic.PointStatistics.java">tetris/logic/PointStatistics.java</a>
                 </td>
                 <td>
                   0
@@ -172,7 +172,91 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#tetris.domain.Moveable.java">tetris/domain/Moveable.java</a>
+                  <a href="${project.url}/checkstyle.html#tetris.entity.OBlock.java">tetris/entity/OBlock.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#tetris.entity.Block.java">tetris/entity/Block.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#tetris.entity.IBlock.java">tetris/entity/IBlock.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#tetris.entity.ZBlock.java">tetris/entity/ZBlock.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#tetris.entity.SBlock.java">tetris/entity/SBlock.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#tetris.entity.Moveable.java">tetris/entity/Moveable.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#tetris.entity.Table.java">tetris/entity/Table.java</a>
                 </td>
                 <td>
                   0

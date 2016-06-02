@@ -19,6 +19,7 @@ public class Game { //add getCurrentSituation! GhostBlock??
     private PointStatistics points;
     private Block currentBlock;
     private Block nextBlock;
+    private int gameLevel;
     private boolean onOff;
 
     public Game(int gameLevel, int tableWidth, int tableHeight) {
@@ -28,6 +29,7 @@ public class Game { //add getCurrentSituation! GhostBlock??
         this.currentBlock = rando.drawNewBlock();
         this.nextBlock = rando.drawNewBlock();
         this.points = new PointStatistics(gameLevel);
+        this.gameLevel = gameLevel;
         this.onOff = true;
     }
 
@@ -91,4 +93,29 @@ public class Game { //add getCurrentSituation! GhostBlock??
     public Block getNextBlock() {
         return this.nextBlock;
     }
+    
+    public int getGameLevel() {
+        return this.gameLevel;
+    }
+
+    public Table getTable() {
+        return table;
+    }
+
+    public PointStatistics getPointStatistics() {
+        return points;
+    }
+
+    public Block getCurrentBlock() {
+        return currentBlock;
+    }
+
+    public boolean isOnOff() {
+        return onOff;
+    }
+
+    public BlockRandomizer getBlockRandomizer() {
+        return rando;
+    }
+    
 }

@@ -17,29 +17,38 @@ import static org.junit.Assert.*;
  * @author luhtalam
  */
 public class GameTest {
-    
-    public GameTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
+    Game game;
+    int gameLevel;
+    int tableWidth;
+    int tableHeight;
     
     @Before
     public void setUp() {
+        gameLevel = 5;
+        tableWidth = 10;
+        tableHeight = 20;
+        game = new Game(gameLevel, tableWidth, tableHeight);
     }
     
-    @After
-    public void tearDown() {
+    @Test
+    public void testConstructorSetsGameLevelRight() {
+        assertEquals(gameLevel, game.getGameLevel());
+        assertEquals(gameLevel, game.getPointStatistics().getGameLevel());
     }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    
+    @Test
+    public void testConstructorSetsTableWidthRight() {
+        assertEquals(tableWidth, game.getTable().getWidth());
+    }
+    
+    @Test
+    public void testConstructorSetsTableHeightRight() {
+        assertEquals(tableHeight, game.getTable().getHeight());
+    }
+    
+    @Test
+    public void testConstructorSetsNewBlocksCoordinatesRight() {
+        assertEquals(tableWidth / 2, game.getBlockRandomizer().getX());
+        assertEquals(1, game.getBlockRandomizer().getY());
+    }
 }

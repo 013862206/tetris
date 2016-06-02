@@ -22,7 +22,7 @@ public class Table {
             table[part.getYCoordinate()][part.getXCoordinate()] = part;
         }
     }
-    
+
     public boolean isFree(int x, int y) {
         if (table[y][x] == null) {
             return true;
@@ -34,11 +34,11 @@ public class Table {
     public Part[][] getTable() {
         return this.table;
     }
-    
+
     public int getHeight() {
         return table.length;
     }
-    
+
     public int getWidth() {
         return table[0].length;
     }

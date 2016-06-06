@@ -20,7 +20,7 @@ public class Game { //add getCurrentSituation! GhostBlock??
     private Block currentBlock;
     private Block nextBlock;
     private int gameLevel;
-    private boolean onOff;
+    private boolean on;
 
     public Game(int gameLevel, int tableWidth, int tableHeight) {
         this.table = new Table(tableWidth, tableHeight);
@@ -30,7 +30,7 @@ public class Game { //add getCurrentSituation! GhostBlock??
         this.nextBlock = rando.drawNewBlock();
         this.points = new PointStatistics(gameLevel);
         this.gameLevel = gameLevel;
-        this.onOff = true;
+        this.on = true;
     }
 
     public void moveBlockLeft() {
@@ -67,8 +67,9 @@ public class Game { //add getCurrentSituation! GhostBlock??
 
     public void moveBlockDownFast() {
         while (BlockLogic.canMoveDown(this.table, currentBlock)) {
-            currentBlock.moveDown();
+            moveBlockDown();
         }
+        moveBlockDown();
     }
 
     public void nextBlock() {
@@ -79,7 +80,7 @@ public class Game { //add getCurrentSituation! GhostBlock??
             nextBlock = rando.drawNewBlock();
             this.points.newBlock();
         } else {
-            onOff = false;
+            on = false;
         }
     }
 
@@ -88,6 +89,10 @@ public class Game { //add getCurrentSituation! GhostBlock??
         int rows = fullRows.size();
         points.addPoints(rows);
         TableLogic.removeRows(this.table, fullRows);
+    }
+    
+    public void setCurrentBlock(Block block) { //for tests
+        this.currentBlock = block;
     }
 
     public Block getNextBlock() {
@@ -110,8 +115,8 @@ public class Game { //add getCurrentSituation! GhostBlock??
         return currentBlock;
     }
 
-    public boolean isOnOff() {
-        return onOff;
+    public boolean isOn() {
+        return on;
     }
 
     public BlockRandomizer getBlockRandomizer() {

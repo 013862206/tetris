@@ -33,7 +33,7 @@ public class ZBlockTest {
 
     @Test
     public void testConstructorSetsPositionsRight() {
-        assertEquals(x - 1, block.getParts()[0].getXCoordinate());
+        assertEquals(x + 1, block.getParts()[0].getXCoordinate());
         assertEquals(y, block.getParts()[0].getYCoordinate());
         assertEquals(x, block.getParts()[1].getXCoordinate());
         assertEquals(y, block.getParts()[1].getYCoordinate());

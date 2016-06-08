@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tetris.ui;
 
 import java.awt.Color;
@@ -12,8 +7,7 @@ import tetris.entity.*;
 import tetris.logic.*;
 
 /**
- *
- * @author luhtalam
+ *GameTable piirtää pelilaudan tilanteen.
  */
 public class GameTable extends JPanel {
 

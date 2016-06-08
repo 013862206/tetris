@@ -1,15 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tetris.entity;
 
 import java.util.*;
 
 /**
- *
- * @author luhtalam
+ *Abstrakti-luokka pelipalikoiden ilmentymiä varten. Pelipalikoiden tarvitsemien metodien toteutus
+ * on suoritettu jo tässä luokassa. Vain erilaisten pelipalikoiden ilmentymien konstruointi on jätetty 
+ * luokan aliluokkien tehtäväksi.
  */
 public abstract class Block implements Moveable {
 

@@ -43,7 +43,7 @@ public class BlockLogicMovementTest {
     @Test
     public void testCanNotPlaceWhenNotFreePlace() {
         table.addBlock(block);
-        block.move(0, -3);
+        block.move(2, 0);
         assertFalse(BlockLogic.canPlace(table, block));
     }
 
@@ -54,14 +54,14 @@ public class BlockLogicMovementTest {
 
     @Test
     public void testCanNotMoveDownOverTheBorder() {
-        block.move(0, 12);
+        block.move(0, 14);
         assertFalse(BlockLogic.canMoveDown(table, block));
     }
 
     @Test
     public void testCanNotMoveDownWhenNotFreeSpace() {
         table.addBlock(block);
-        block.move(0, -4);
+        block.move(0, -1);
         assertFalse(BlockLogic.canMoveDown(table, block));
     }
 
@@ -79,7 +79,7 @@ public class BlockLogicMovementTest {
     @Test
     public void testCanNotMoveRightWhenNotFreeSpace() {
         table.addBlock(block);
-        block.move(-1, 0);
+        block.move(-4, 0);
         assertFalse(BlockLogic.canMoveRight(table, block));
     }
 
@@ -90,7 +90,7 @@ public class BlockLogicMovementTest {
 
     @Test
     public void testCanNotMoveLeftOverTheBorder() {
-        block.move(-5, 0);
+        block.move(-4, 0);
         assertFalse(BlockLogic.canMoveLeft(table, block));
     }
 
@@ -100,5 +100,5 @@ public class BlockLogicMovementTest {
         block.move(1, 0);
         assertFalse(BlockLogic.canMoveLeft(table, block));
     }
-    
+
 }

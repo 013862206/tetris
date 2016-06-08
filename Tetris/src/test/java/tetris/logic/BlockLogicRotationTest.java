@@ -40,37 +40,37 @@ public class BlockLogicRotationTest {
 
     @Test
     public void testIsInTableTrueLeftUpperCorner() {
-        block.move(-5, -4);
+        block.move(-4, -5);
         assertTrue(BlockLogic.isInTable(table, block));
     }
 
     @Test
     public void testIsInTableTrueRightBottomCorner() {
-        block.move(4, 12);
+        block.move(2, 14);
         assertTrue(BlockLogic.isInTable(table, block));
     }
 
     @Test
     public void testIsInTableFalseOverBottomEdge() {
-        block.move(0, 13);
+        block.move(0, 15);
         assertFalse(BlockLogic.isInTable(table, block));
     }
 
     @Test
     public void testIsInTableFalseOverLeftEdge() {
-        block.move(-6, 0);
+        block.move(-5, 0);
         assertFalse(BlockLogic.isInTable(table, block));
     }
 
     @Test
     public void testIsInTableFalseOverUpperEdge() {
-        block.move(0, -5);
+        block.move(0, -6);
         assertFalse(BlockLogic.isInTable(table, block));
     }
 
     @Test
     public void testIsInTableFalseOverRightEdge() {
-        block.move(5, 0);
+        block.move(4, 0);
         assertFalse(BlockLogic.isInTable(table, block));
     }
 
@@ -81,26 +81,26 @@ public class BlockLogicRotationTest {
 
     @Test
     public void testCanNotRotateRightOverRightBorder() {
+        block.rotateRight();
         block.move(4, 0);
         assertFalse(BlockLogic.canRotateRight(table, block));
     }
 
     @Test
     public void testCanNotRotateRightOverLeftBorder() {
+        block.rotateRight();
         block.move(-4, 0);
         assertFalse(BlockLogic.canRotateRight(table, block));
     }
 
     @Test
     public void testCanNotRotateRightOverUpperBorder() {
-        block.rotateRight();
-        block.move(0, -4);
+        block.move(0, -5);
         assertFalse(BlockLogic.canRotateRight(table, block));
     }
 
     @Test
     public void testCanNotRotateRightOverBottomBorder() {
-        block.rotateRight();
         block.move(0, 14);
         assertFalse(BlockLogic.canRotateRight(table, block));
     }
@@ -108,7 +108,7 @@ public class BlockLogicRotationTest {
     @Test
     public void testCanNotRotateRightWhenNotSpace() {
         table.addBlock(block);
-        block.move(1, 0);
+        block.move(0, -1);
         assertFalse(BlockLogic.canRotateRight(table, block));
     }
 
@@ -119,34 +119,34 @@ public class BlockLogicRotationTest {
 
     @Test
     public void testCanNotRotateLeftOverRightBorder() {
+        block.rotateRight();
         block.move(4, 0);
         assertFalse(BlockLogic.canRotateLeft(table, block));
     }
 
     @Test
     public void testCanNotRotateLeftOverLeftBorder() {
+        block.rotateRight();
         block.move(-5, 0);
         assertFalse(BlockLogic.canRotateLeft(table, block));
     }
 
     @Test
     public void testCanNotRotateLeftOverUpperBorder() {
-        block.rotateRight();
         block.move(0, -5);
         assertFalse(BlockLogic.canRotateLeft(table, block));
     }
 
     @Test
     public void testCanNotRotateLeftOverBottomBorder() {
-        block.rotateRight();
-        block.move(0, 13);
+        block.move(0, 14);
         assertFalse(BlockLogic.canRotateLeft(table, block));
     }
     
     @Test
     public void testCannotRotateLeftWhenNotSpace() {
         table.addBlock(block);
-        block.move(-1, 0);
+        block.move(0, 1);
         assertFalse(BlockLogic.canRotateLeft(table, block));
     }
 }

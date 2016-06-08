@@ -35,8 +35,8 @@ public class IBlockTest {
     @Test
     public void testConstructorSetsPositionsRight() {
         for (int i = 0; i < 4; i++) {
-            assertEquals(x, block.getParts()[i].getXCoordinate());
-            assertEquals(y - 1 + i, block.getParts()[i].getYCoordinate());
+            assertEquals(y, block.getParts()[i].getYCoordinate());
+            assertEquals(x - 1 + i, block.getParts()[i].getXCoordinate());
         }
     }
     

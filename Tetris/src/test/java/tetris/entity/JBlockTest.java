@@ -33,16 +33,16 @@ public class JBlockTest {
 
     @Test
     public void testConstructorSetsPositionsRight() {
-        assertEquals(x, block.getParts()[0].getXCoordinate());
-        assertEquals(y - 1, block.getParts()[0].getYCoordinate());
+        assertEquals(x + 1, block.getParts()[0].getXCoordinate());
+        assertEquals(y, block.getParts()[0].getYCoordinate());
         assertEquals(x, block.getParts()[1].getXCoordinate());
         assertEquals(y, block.getParts()[1].getYCoordinate());
-        assertEquals(x, block.getParts()[2].getXCoordinate());
-        assertEquals(y + 1, block.getParts()[2].getYCoordinate());
+        assertEquals(x - 1, block.getParts()[2].getXCoordinate());
+        assertEquals(y, block.getParts()[2].getYCoordinate());
         assertEquals(x - 1, block.getParts()[3].getXCoordinate());
-        assertEquals(y + 1, block.getParts()[3].getYCoordinate());
+        assertEquals(y - 1, block.getParts()[3].getYCoordinate());
     }
-    
+
     @Test
     public void testConstructorSetsColorsRight() {
         for (Part part : block.getParts()) {

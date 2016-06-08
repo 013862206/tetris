@@ -6,6 +6,7 @@
 package tetris.logic;
 
 import java.util.ArrayList;
+import java.util.Random;
 import tetris.entity.*;
 
 /**
@@ -25,7 +26,7 @@ public class Game { //add getCurrentSituation! GhostBlock??
     public Game(int gameLevel, int tableWidth, int tableHeight) {
         this.table = new Table(tableWidth, tableHeight);
         int xCoord = tableWidth / 2;
-        this.rando = new BlockRandomizer(xCoord, 1);
+        this.rando = new BlockRandomizer(xCoord, 1, new Random());
         this.currentBlock = rando.drawNewBlock();
         this.nextBlock = rando.drawNewBlock();
         this.points = new PointStatistics(gameLevel);

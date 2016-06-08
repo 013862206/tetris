@@ -34,6 +34,8 @@ public class MyKeyListener implements KeyListener {
             game.moveBlockLeft();
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             game.moveBlockRight();
+        } else if (e.getKeyCode() == KeyEvent.VK_UP) {
+            game.rotateBlockToRight();
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
             game.moveBlockDown();
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
@@ -44,7 +46,7 @@ public class MyKeyListener implements KeyListener {
             game.rotateBlockToRight();
         }
         panel.repaint();
-        
+
     }
 
     @Override

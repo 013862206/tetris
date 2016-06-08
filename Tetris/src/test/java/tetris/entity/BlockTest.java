@@ -30,7 +30,7 @@ public class BlockTest {
         color = Color.BLACK;
         block = new IBlock(x, y, color);
     }
-    
+
     @Test
     public void testConstructorSetsCoordinatesRight() {
         assertEquals(this.x, block.getX());
@@ -66,8 +66,8 @@ public class BlockTest {
         int dy = 5;
         block.move(dx, dy);
         for (int i = 0; i < 4; i++) {
-            assertEquals(x + dx, block.getParts()[i].getXCoordinate());
-            assertEquals(y - 1 + i + dy, block.getParts()[i].getYCoordinate());
+            assertEquals(y + dy, block.getParts()[i].getYCoordinate());
+            assertEquals(x - 1 + i + dx, block.getParts()[i].getXCoordinate());
         }
     }
 
@@ -75,8 +75,8 @@ public class BlockTest {
     public void testMoveDownMovesEveryPartRight() {
         block.moveDown();
         for (int i = 0; i < 4; i++) {
-            assertEquals(x, block.getParts()[i].getXCoordinate());
-            assertEquals(y + i, block.getParts()[i].getYCoordinate());
+            assertEquals(x - 1 + i, block.getParts()[i].getXCoordinate());
+            assertEquals(y + 1, block.getParts()[i].getYCoordinate());
         }
     }
 
@@ -91,8 +91,8 @@ public class BlockTest {
     public void testMoveRightMovesEveryPartRight() {
         block.moveRight();
         for (int i = 0; i < 4; i++) {
-            assertEquals(x + 1, block.getParts()[i].getXCoordinate());
-            assertEquals(y - 1 + i, block.getParts()[i].getYCoordinate());
+            assertEquals(x + i, block.getParts()[i].getXCoordinate());
+            assertEquals(y, block.getParts()[i].getYCoordinate());
         }
     }
 
@@ -107,8 +107,8 @@ public class BlockTest {
     public void testMoveLeftMovesEveryPartRight() {
         block.moveLeft();
         for (int i = 0; i < 4; i++) {
-            assertEquals(x - 1, block.getParts()[i].getXCoordinate());
-            assertEquals(y - 1 + i, block.getParts()[i].getYCoordinate());
+            assertEquals(x - 2 + i, block.getParts()[i].getXCoordinate());
+            assertEquals(y, block.getParts()[i].getYCoordinate());
         }
     }
 
@@ -116,8 +116,8 @@ public class BlockTest {
     public void testRotateRightOneTime() {
         block.rotateRight();
         for (int i = 0; i < 4; i++) {
-            assertEquals(y, block.getParts()[i].getYCoordinate());
-            assertEquals(x + 1 - i, block.getParts()[i].getXCoordinate());
+            assertEquals(y - 1 + i, block.getParts()[i].getYCoordinate());
+            assertEquals(x, block.getParts()[i].getXCoordinate());
         }
     }
 
@@ -126,8 +126,8 @@ public class BlockTest {
         block.rotateRight();
         block.rotateRight();
         for (int i = 0; i < 4; i++) {
-            assertEquals(x, block.getParts()[i].getXCoordinate());
-            assertEquals(y + 1 - i, block.getParts()[i].getYCoordinate());
+            assertEquals(y, block.getParts()[i].getYCoordinate());
+            assertEquals(x + 1 - i, block.getParts()[i].getXCoordinate());
         }
     }
 
@@ -137,8 +137,8 @@ public class BlockTest {
         block.rotateRight();
         block.rotateRight();
         for (int i = 0; i < 4; i++) {
-            assertEquals(y, block.getParts()[i].getYCoordinate());
-            assertEquals(x - 1 + i, block.getParts()[i].getXCoordinate());
+            assertEquals(y + 1 - i, block.getParts()[i].getYCoordinate());
+            assertEquals(x, block.getParts()[i].getXCoordinate());
         }
     }
 
@@ -149,8 +149,8 @@ public class BlockTest {
         block.rotateRight();
         block.rotateRight();
         for (int i = 0; i < 4; i++) {
-            assertEquals(x, block.getParts()[i].getXCoordinate());
-            assertEquals(y - 1 + i, block.getParts()[i].getYCoordinate());
+            assertEquals(x - 1 + i, block.getParts()[i].getXCoordinate());
+            assertEquals(y, block.getParts()[i].getYCoordinate());
         }
     }
 
@@ -158,8 +158,8 @@ public class BlockTest {
     public void testRotateLeftOneTime() {
         block.rotateLeft();
         for (int i = 0; i < 4; i++) {
-            assertEquals(y, block.getParts()[i].getYCoordinate());
-            assertEquals(x - 1 + i, block.getParts()[i].getXCoordinate());
+            assertEquals(y + 1 - i, block.getParts()[i].getYCoordinate());
+            assertEquals(x, block.getParts()[i].getXCoordinate());
         }
     }
 
@@ -168,8 +168,8 @@ public class BlockTest {
         block.rotateLeft();
         block.rotateLeft();
         for (int i = 0; i < 4; i++) {
-            assertEquals(x, block.getParts()[i].getXCoordinate());
-            assertEquals(y + 1 - i, block.getParts()[i].getYCoordinate());
+            assertEquals(y, block.getParts()[i].getYCoordinate());
+            assertEquals(x + 1 - i, block.getParts()[i].getXCoordinate());
         }
     }
 
@@ -179,8 +179,8 @@ public class BlockTest {
         block.rotateLeft();
         block.rotateLeft();
         for (int i = 0; i < 4; i++) {
-            assertEquals(y, block.getParts()[i].getYCoordinate());
-            assertEquals(x + 1 - i, block.getParts()[i].getXCoordinate());
+            assertEquals(y - 1 + i, block.getParts()[i].getYCoordinate());
+            assertEquals(x, block.getParts()[i].getXCoordinate());
         }
     }
 
@@ -191,8 +191,8 @@ public class BlockTest {
         block.rotateLeft();
         block.rotateLeft();
         for (int i = 0; i < 4; i++) {
-            assertEquals(x, block.getParts()[i].getXCoordinate());
-            assertEquals(y - 1 + i, block.getParts()[i].getYCoordinate());
+            assertEquals(x - 1 + i, block.getParts()[i].getXCoordinate());
+            assertEquals(y, block.getParts()[i].getYCoordinate());
         }
     }
 

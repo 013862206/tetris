@@ -19,8 +19,8 @@ public class BlockRandomizer {
     private int x;
     private int y;
     
-    public BlockRandomizer(int x, int y) {
-        this.random = new Random();
+    public BlockRandomizer(int x, int y, Random random) {
+        this.random = random;
         this.x = x;
         this.y = y;
     }
@@ -50,5 +50,9 @@ public class BlockRandomizer {
 
     public int getY() {
         return y;
+    }
+    
+    public Random getRandom() {
+        return random;
     }
 }

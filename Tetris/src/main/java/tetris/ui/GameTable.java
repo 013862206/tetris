@@ -15,7 +15,7 @@ import tetris.logic.*;
  *
  * @author luhtalam
  */
-public class GameTable extends JPanel{
+public class GameTable extends JPanel {
 
     private Game game;
     private int scale;
@@ -44,7 +44,7 @@ public class GameTable extends JPanel{
         Block block = game.getCurrentBlock();
         for (Part p : block.getParts()) {
             g.setColor(p.getColor());
-            g.fill3DRect(scale* p.getXCoordinate(), scale * p.getYCoordinate(), scale, scale, true);
+            g.fill3DRect(scale * p.getXCoordinate(), scale * p.getYCoordinate(), scale, scale, true);
         }
     }
 }

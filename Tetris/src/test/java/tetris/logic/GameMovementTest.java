@@ -12,13 +12,15 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import tetris.entity.*;
+import tetris.entity.Block;
+import tetris.entity.IBlock;
+import tetris.entity.Part;
 
 /**
  *
  * @author luhtalam
  */
-public class GameTest {
+public class GameMovementTest {
 
     Game game;
     int gameLevel;
@@ -31,38 +33,6 @@ public class GameTest {
         tableWidth = 10;
         tableHeight = 20;
         game = new Game(gameLevel, tableWidth, tableHeight);
-    }
-
-    @Test
-    public void testConstructorSetsGameLevelRight() {
-        assertEquals(gameLevel, game.getGameLevel());
-        assertEquals(gameLevel, game.getPointStatistics().getGameLevel());
-    }
-
-    @Test
-    public void testConstructorSetsTableWidthRight() {
-        assertEquals(tableWidth, game.getTable().getWidth());
-    }
-
-    @Test
-    public void testConstructorSetsTableHeightRight() {
-        assertEquals(tableHeight, game.getTable().getHeight());
-    }
-
-    @Test
-    public void testConstructorSetsNewBlocksCoordinatesRight() {
-        assertEquals(tableWidth / 2, game.getBlockRandomizer().getX());
-        assertEquals(1, game.getBlockRandomizer().getY());
-    }
-
-    @Test
-    public void testConstructorDrawNextBlock() {
-        assertNotNull(game.getNextBlock());
-    }
-
-    @Test
-    public void testGameIsOnAtBeginning() {
-        assertTrue(game.isOn());
     }
 
     @Test
@@ -182,11 +152,11 @@ public class GameTest {
         IBlock block = new IBlock(x, y, Color.BLACK);
         game.setCurrentBlock(block);
         game.nextBlock();
-        for (Part part: block.getParts()) {
+        for (Part part : block.getParts()) {
             assertEquals(part, game.getTable().getTable()[part.getYCoordinate()][part.getXCoordinate()]);
         }
     }
-    
+
     @Test
     public void testNextBlockChecksTable() {
         for (int x = 0; x < 6; x++) {
@@ -197,7 +167,7 @@ public class GameTest {
         game.nextBlock();
         assertNull(game.getTable().getTable()[19][0]);
     }
-    
+
     @Test
     public void testNextBlockMoveNextBlockToCurrentIfGameCanContinue() {
         int x = 5;
@@ -208,7 +178,7 @@ public class GameTest {
         game.nextBlock();
         assertEquals(nextBlock, game.getCurrentBlock());
     }
-    
+
     @Test
     public void testNextBlockDrawNewNextBlockIfGameCanContinue() {
         int x = 5;
@@ -219,7 +189,7 @@ public class GameTest {
         game.nextBlock();
         assertNotNull(game.getNextBlock());
     }
-    
+
     @Test
     public void testNextBlockIncreasePointStatisticsBlocksByOneIfGameCanContinue() {
         int x = 5;
@@ -229,13 +199,13 @@ public class GameTest {
         game.nextBlock();
         assertEquals(2, game.getPointStatistics().getBlocks());
     }
-    
+
     @Test
     public void testNextBlockTurnGameOffIfGameCanNotContinue() {
         game.nextBlock();
         assertFalse(game.isOn());
     }
-    
+
     @Test
     public void testMoveBlockDownCallsNextBlockWhenNoFreeSpace() {
         int x = 5;
@@ -245,7 +215,7 @@ public class GameTest {
         game.moveBlockDown();
         assertNotEquals(block, game.getCurrentBlock());
     }
-    
+
     @Test
     public void testMoveBlockDownFastWorksNoObstacle() {
         int x = 5;
@@ -256,18 +226,17 @@ public class GameTest {
         assertEquals(19, block.getY());
         assertNotEquals(block, game.getCurrentBlock());
     }
-    
+
     @Test
     public void testMoveBlockDownFastWorksObstacle() {
         int x = 5;
         int y = 1;
         IBlock block = new IBlock(x, y, Color.BLACK);
         game.setCurrentBlock(block);
-        game.getTable().getTable()[12][6] = new Part(7,12, Color.BLACK);
+        game.getTable().getTable()[12][6] = new Part(7, 12, Color.BLACK);
         game.moveBlockDownFast();
         assertEquals(11, block.getY());
         assertNotEquals(block, game.getCurrentBlock());
     }
-    
 
 }

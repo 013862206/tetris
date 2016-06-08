@@ -38,14 +38,14 @@ public class Gui implements Runnable {
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        CreateComponents(frame.getContentPane());
+        createComponents(frame.getContentPane());
 
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
-    private void CreateComponents(Container container) {
+    private void createComponents(Container container) {
         table = new GameTable(game, scale);
         container.add(table);
         MyKeyListener listener = new MyKeyListener(game, table);

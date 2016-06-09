@@ -5,20 +5,32 @@ import java.util.Random;
 import tetris.entity.*;
 
 /**
- *Uusien pelipalikoiden arvonnan suorittava luokka.
+ * Uusien pelipalikoiden arvonnan suorittava luokka.
  */
 public class BlockRandomizer {
-    
+
     private Random random;
     private int x;
     private int y;
-    
+
+    /**
+     * Luo uuden pelipalikoiden arpojan.
+     *
+     * @param x Konstruoitavien palikoiden x-koordinaatti
+     * @param y Konstruoitavien palikoiden y-koordinaatti
+     * @param random Arvonnan suorittava arpoja
+     */
     public BlockRandomizer(int x, int y, Random random) {
         this.random = random;
         this.x = x;
         this.y = y;
     }
-    
+
+    /**
+     * Arpoo uuden pelipalikan kaikkien mahdollisten palikoiden joukosta.
+     *
+     * @return Arvottu pelipalikka
+     */
     public Block drawNewBlock() {
         int a = random.nextInt(7);
         if (a == 0) {
@@ -38,14 +50,23 @@ public class BlockRandomizer {
         }
     }
 
+    /**
+     * @return Uusien palikoiden x-koordinaatti
+     */
     public int getX() {
         return x;
     }
 
+    /**
+     * @return Uusien palikoiden y-koordinaatti
+     */
     public int getY() {
         return y;
     }
-    
+
+    /**
+     * @return Arvonnan suorittava arpoja
+     */
     public Random getRandom() {
         return random;
     }

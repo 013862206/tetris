@@ -5,10 +5,19 @@ package tetris.entity;
  */
 public interface Moveable {
 
+    /**
+     *Siirtää objectia oikealle.
+     */
     public void moveRight();
 
+    /**
+     *Siirtää objectia vasemmalle.
+     */
     public void moveLeft();
 
+    /**
+     *Siirtää objectia alaspäin.
+     */
     public void moveDown();
 
 }

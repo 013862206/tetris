@@ -3,10 +3,19 @@ package tetris.entity;
 import java.awt.Color;
 
 /**
- *Z-muotoisen palikan konstruointi.
+ * Luokka kuvastaa Z:n muotoista pelipalikkaa.
  */
 public class ZBlock extends Block {
 
+    /**
+     * Luo uuden Z:n muotoisen palikan.
+     *
+     * @param x Uuden palikan x-koordinaatti
+     * @param y Uuden palikan y-koordinaatti
+     * @param color Uuden palikan väri
+     *
+     * @see tetris.entity.Block#Block(int, int)
+     */
     public ZBlock(int x, int y, Color color) {
         super(x, y);
         parts[0] = new Part(x + 1, y, color);

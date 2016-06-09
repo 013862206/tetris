@@ -3,10 +3,20 @@ package tetris.logic;
 import tetris.entity.*;
 
 /**
- *Palikoiden liikuttelua hallinnoiva luokka.
+ * Palikoiden liikuttelua hallinnoiva luokka.
  */
 public class BlockLogic {
 
+    /**
+     * Tarkistaa voiko pelipalikkan sijoittaa pelilaudalle.
+     *
+     * @param table Pelilautataulukko
+     * @param block Pelipalikka
+     * @return Totuusarvo siitä, voiko kyseisen palikan sijoittaa taulukkoon
+     * pelipalikan koordinaatteihin
+     *
+     * @see tetris.entity.Table#isFree(int, int)
+     */
     public static boolean canPlace(Table table, Block block) {
         int x, y;
         for (Part part : block.getParts()) {
@@ -19,6 +29,15 @@ public class BlockLogic {
         return true;
     }
 
+    /**
+     * Tarkistaa voiko pelipalikkaa siirtää pelilaudalla alaspäin.
+     *
+     * @param table Pelilautataulukko
+     * @param block Pelipalikka
+     * @return Totuusarvo siitä, voiko voiko palikkaa siirtää alaspäin
+     *
+     * @see tetris.entity.Table#isFree(int, int)
+     */
     public static boolean canMoveDown(Table table, Block block) {
         int x, y;
         for (Part part : block.getParts()) {
@@ -34,6 +53,15 @@ public class BlockLogic {
         return true;
     }
 
+    /**
+     * Tarkistaa voiko pelipalikkaa siirtää pelilaudalla vasemmalle.
+     *
+     * @param table Pelilautataulukko
+     * @param block Pelipalikka
+     * @return Totuusarvo siitä, voiko palikkaa siirtää vasemmalle.
+     *
+     * @see tetris.entity.Table#isFree(int, int)
+     */
     public static boolean canMoveLeft(Table table, Block block) {
         int x, y;
         for (Part part : block.getParts()) {
@@ -49,6 +77,15 @@ public class BlockLogic {
         return true;
     }
 
+    /**
+     * Tarkistaa voiko pelipalikkaa siirtää pelilaudalla oikealle.
+     *
+     * @param table Pelilautataulukko
+     * @param block Pelipalikka
+     * @return Totuusarvo siitä, voiko pelipalikkaa siirtää laudalla oikealle
+     *
+     * @see tetris.entity.Table#isFree(int, int)
+     */
     public static boolean canMoveRight(Table table, Block block) {
         int x, y;
         for (Part part : block.getParts()) {
@@ -64,6 +101,14 @@ public class BlockLogic {
         return true;
     }
 
+    /**
+     * Tarkistaa onko pelipalikka pelilaudalla.
+     *
+     * @param table Pelilautataulukko
+     * @param block Pelipalikka
+     * @return Totuusarvo siitä, onko pelipalikka pelilaudan rajojen
+     * sisäpuolella
+     */
     public static boolean isInTable(Table table, Block block) {
         int x, y;
         for (Part part : block.getParts()) {
@@ -76,6 +121,17 @@ public class BlockLogic {
         return true;
     }
 
+    /**
+     * Tarkistaa voiko pelipalikkaa kääntää pelilaudalla myötäpäivään.
+     *
+     * @param table Pelilautataulukko
+     * @param block Pelipalikka
+     * @return Totuusarvo, siitä voiko pelipalikkaa kääntää myötäpäivään
+     * pelilaudalla
+     *
+     * @see tetris.entity.Block#rotateRight()
+     * @see tetris.entity.Block#rotateLeft()
+     */
     public static boolean canRotateRight(Table table, Block block) {
         boolean isPossible = false;
         block.rotateRight();
@@ -88,6 +144,14 @@ public class BlockLogic {
         return isPossible;
     }
 
+    /**
+     * Tarkistaa voiko pelipalikkaa kääntää pelilaudalla vastapäivään.
+     *
+     * @param table Pelilautataulukko
+     * @param block Pelipalikka
+     * @return Totuusarvo siitä, voiko pelipalikkaa kääntää vastapäivään
+     * pelilaudalla
+     */
     public static boolean canRotateLeft(Table table, Block block) {
         boolean isPossible = false;
         block.rotateLeft();

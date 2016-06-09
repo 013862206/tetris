@@ -14,6 +14,11 @@ public class GameTable extends JPanel {
     private Game game;
     private int scale;
 
+    /**
+     *
+     * @param game
+     * @param scale
+     */
     public GameTable(Game game, int scale) {
         this.game = game;
         this.scale = scale;

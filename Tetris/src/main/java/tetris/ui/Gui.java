@@ -23,6 +23,11 @@ public class Gui implements Runnable {
     private int scale;
     private GameTable table;
 
+    /**
+     *
+     * @param game
+     * @param scale
+     */
     public Gui(Game game, int scale) {
         this.game = game;
         this.scale = scale;

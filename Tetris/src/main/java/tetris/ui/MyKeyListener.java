@@ -7,13 +7,19 @@ import tetris.logic.Game;
 
 /**
  *MyKeyListener luokka kuuntelee käyttäjän näppäimistön painalluksia. Painalluksen jälkeen luokka
- * suorittaa siihen liitetyn peli-luokan metodeja.
+ * suorittaa siihen liitetyn peli-luokan metodeja. Sekä lähetää JPanelille käskyn piirtää uusi
+ * pelitilanne.
  */
 public class MyKeyListener implements KeyListener {
 
     private Game game;
     private JPanel panel;
 
+    /**
+     *
+     * @param game
+     * @param panel
+     */
     public MyKeyListener(Game game, JPanel panel) {
         this.game = game;
         this.panel = panel;

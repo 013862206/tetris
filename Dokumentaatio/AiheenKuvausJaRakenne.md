@@ -17,6 +17,6 @@
 * Värimaailman säätäminen
 * Lisävaikeustaso, jossa yllätyksiä
 
-#Määrittelyvaiheen luokkakaavio
+#Luokkakaavio
 
 ![Luokkakaavio](TetrisClassDiagram.png)

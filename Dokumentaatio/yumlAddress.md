@@ -1,1 +1,1 @@
-http://yuml.me/edit/d39e61a4
+http://yuml.me/edit/a6609f1b

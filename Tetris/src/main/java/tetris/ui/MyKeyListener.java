@@ -6,9 +6,9 @@ import javax.swing.JPanel;
 import tetris.logic.Game;
 
 /**
- *MyKeyListener luokka kuuntelee käyttäjän näppäimistön painalluksia. Painalluksen jälkeen luokka
- * suorittaa siihen liitetyn peli-luokan metodeja. Sekä lähetää JPanelille käskyn piirtää uusi
- * pelitilanne.
+ * MyKeyListener luokka kuuntelee käyttäjän näppäimistön painalluksia.
+ * Painalluksen jälkeen luokka suorittaa siihen liitetyn peli-luokan metodeja.
+ * Sekä lähetää JPanelille käskyn piirtää uusi pelitilanne.
  */
 public class MyKeyListener implements KeyListener {
 
@@ -31,23 +31,34 @@ public class MyKeyListener implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            game.moveBlockLeft();
-        } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            game.moveBlockRight();
-        } else if (e.getKeyCode() == KeyEvent.VK_UP) {
-            game.rotateBlockToRight();
-        } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            game.moveBlockDown();
-        } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-            game.moveBlockDownFast();
-        } else if (e.getKeyCode() == KeyEvent.VK_Z) {
-            game.rotateBlockToLeft();
-        } else if (e.getKeyCode() == KeyEvent.VK_X) {
-            game.rotateBlockToRight();
+        if (game.isOn()) {
+            switch (e.getKeyCode()) {
+                case KeyEvent.VK_LEFT:
+                    game.moveBlockLeft();
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    game.moveBlockRight();
+                    break;
+                case KeyEvent.VK_UP:
+                    game.rotateBlockToRight();
+                    break;
+                case KeyEvent.VK_DOWN:
+                    game.moveBlockDown();
+                    break;
+                case KeyEvent.VK_SPACE:
+                    game.moveBlockDownFast();
+                    break;
+                case KeyEvent.VK_Z:
+                    game.rotateBlockToLeft();
+                    break;
+                case KeyEvent.VK_X:
+                    game.rotateBlockToRight();
+                    break;
+                default:
+                    break;
+            }
+            panel.repaint();
         }
-        panel.repaint();
-
     }
 
     @Override

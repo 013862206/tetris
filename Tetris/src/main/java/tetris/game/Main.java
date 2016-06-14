@@ -9,6 +9,7 @@ import java.awt.Graphics;
 import tetris.logic.Game;
 import tetris.ui.GameTable;
 import tetris.ui.Gui;
+import tetris.ui.Menu;
 
 /**
  *
@@ -21,8 +22,7 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
-        Game game = new Game(1, 10, 20);
-        Gui gui = new Gui(game, 30);
-        gui.run();
+        Menu m = new Menu();
+        m.run();
     }
 }

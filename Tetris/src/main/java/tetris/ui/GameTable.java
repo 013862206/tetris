@@ -1,18 +1,25 @@
 package tetris.ui;
 
+import static com.sun.java.accessibility.util.AWTEventMonitor.addActionListener;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPanel;
 import tetris.entity.*;
 import tetris.logic.*;
 
 /**
- *GameTable piirtää pelilaudan tilanteen.
+ * GameTable piirtää pelilaudan tilanteen.
  */
 public class GameTable extends JPanel {
 
     private Game game;
     private int scale;
+    private Thread t;
 
     /**
      *
@@ -27,6 +34,13 @@ public class GameTable extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        drawTable(g);
+        drawCurrentBlock(g);
+        drawPointStatistics(g);
+        drawNextBlock(g);
+    }
+
+    private void drawTable(Graphics g) {
         Part part;
         for (int y = 0; y < game.getTable().getHeight(); y++) {
             for (int x = 0; x < game.getTable().getWidth(); x++) {
@@ -40,10 +54,40 @@ public class GameTable extends JPanel {
                 }
             }
         }
+    }
+
+    private void drawCurrentBlock(Graphics g) {
         Block block = game.getCurrentBlock();
         for (Part p : block.getParts()) {
             g.setColor(p.getColor());
             g.fill3DRect(scale * p.getXCoordinate(), scale * p.getYCoordinate(), scale, scale, true);
         }
+    }
+
+    private void drawPointStatistics(Graphics g) {
+        Font font = new Font("Helvetica", Font.BOLD, 30);
+        g.setFont(font);
+        g.setColor(Color.black);
+        g.drawString("Game Level: " + game.getPointStatistics().getGameLevel(),
+                game.getTable().getWidth() * scale + 50, 50);
+        g.drawString("Points: " + game.getPointStatistics().getPoints(),
+                game.getTable().getWidth() * scale + 50, 100);
+        g.drawString("Blocks: " + game.getPointStatistics().getBlocks(),
+                game.getTable().getWidth() * scale + 50, 150);
+        g.drawString("Lines: " + game.getPointStatistics().getLines(),
+                game.getTable().getWidth() * scale + 50, 200);
+    }
+
+    private void drawNextBlock(Graphics g) {
+        Block block = game.getNextBlock();
+        int x = block.getX();
+        int y = block.getY();
+        block.move(-x, -y);
+        for (Part p : block.getParts()) {
+            g.setColor(p.getColor());
+            g.fill3DRect(scale * (game.getTable().getWidth() + p.getXCoordinate() + 1) + 50,
+                    250 + scale * p.getYCoordinate(), scale, scale, true);
+        }
+        block.move(x, y);
     }
 }

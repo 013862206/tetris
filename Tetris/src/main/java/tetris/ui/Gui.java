@@ -36,7 +36,7 @@ public class Gui implements Runnable {
     @Override
     public void run() {
         frame = new JFrame("Tetris");
-        int width = (game.getTable().getWidth()) * scale;
+        int width = (game.getTable().getWidth()) * scale + 300;
         int height = (game.getTable().getHeight() + 1) * scale;
 
         frame.setPreferredSize(new Dimension(width, height));

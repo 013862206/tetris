@@ -16,3 +16,4 @@ Päivä | Tunnit | Kuvaus
 06.05.2016 | 3.5 h | Game-luokan testejä ja alkeellinen käyttöliittymä. 
 08.06.2016 | 3.0 h | Randomin testauksen opettelua, testit sataan prosenttiin ja JavaDocin aloitus.
 09.06.2016 | 2.5 h | JavaDocin kirjoittelua.
+12.06.2016 | 2.0 h | GameLoopin luomisen opettelua ja pistestatistiikka sekä seuraavapala grafiikkaliittymään.

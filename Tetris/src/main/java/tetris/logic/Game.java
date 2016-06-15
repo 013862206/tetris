@@ -30,7 +30,7 @@ public class Game { //add GhostBlock??
      */
     public Game(int gameLevel, int tableWidth, int tableHeight) {
         this.table = new Table(tableWidth, tableHeight);
-        int xCoord = tableWidth / 2 - 1;
+        int xCoord = tableWidth / 2;
         this.randomizer = new BlockRandomizer(xCoord, 1, new Random());
         this.currentBlock = randomizer.drawNewBlock();
         this.nextBlock = randomizer.drawNewBlock();

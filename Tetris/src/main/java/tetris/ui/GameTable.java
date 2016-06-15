@@ -1,6 +1,7 @@
 package tetris.ui;
 
 import static com.sun.java.accessibility.util.AWTEventMonitor.addActionListener;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -10,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -47,6 +49,9 @@ public class GameTable extends JPanel implements ActionListener {
         drawCurrentBlock(g);
         drawPointStatistics(g);
         drawNextBlock(g);
+        if (!game.isOn()) {
+            drawGameOver(g);
+        }
     }
 
     private void drawTable(Graphics g) {
@@ -100,6 +105,13 @@ public class GameTable extends JPanel implements ActionListener {
         block.move(x, y);
     }
 
+    private void drawGameOver(Graphics g) {
+        Font font = new Font("Helvetica", Font.BOLD, 50);
+        g.setFont(font);
+        g.setColor(Color.red);
+        g.drawString("GAME OVER!", scale * 3, scale * 10);
+    }
+
     public void run() {
         frame = new JFrame("Tetris");
         int width = (game.getTable().getWidth()) * scale + 300;
@@ -117,6 +129,9 @@ public class GameTable extends JPanel implements ActionListener {
     }
 
     private void createComponents(Container container) {
+//        JButton exit = new JButton("EXIT");
+//        frame.add(exit, BorderLayout.SOUTH);
+
         container.add(this);
         MyKeyListener listener = new MyKeyListener(game, this);
         frame.addKeyListener(listener);
@@ -125,7 +140,7 @@ public class GameTable extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (!game.isOn()) {
-            return;
+            timer.stop();
         }
         game.moveBlockDown();
         repaint();

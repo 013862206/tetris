@@ -25,6 +25,7 @@ public class Menu implements Runnable, ActionListener {
     private int gameLevel;
     private JFrame frame;
     private JButton start;
+    private JButton level;
     private JButton exit;
 
     public Menu() {
@@ -56,6 +57,7 @@ public class Menu implements Runnable, ActionListener {
             if (gameLevel > 10) {
                 gameLevel = 1;
             }
+            level.setText("GAME LEVEL: " + this.gameLevel);
         } else if (e.getActionCommand() == "EXIT") {
             System.exit(0);
         }
@@ -65,7 +67,7 @@ public class Menu implements Runnable, ActionListener {
         start = new JButton("START GAME");
         start.addActionListener(this);
 
-        JButton level = new JButton("GAME LEVEL");
+        level = new JButton("GAME LEVEL: " + this.gameLevel);
         level.addActionListener(this);
 
         exit = new JButton("EXIT");

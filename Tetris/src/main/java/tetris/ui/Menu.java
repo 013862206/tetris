@@ -50,7 +50,6 @@ public class Menu implements Runnable, ActionListener {
         if (e.getActionCommand() == "START GAME") {
             Game game = new Game(this.gameLevel, 10, 20);
             GameTable gameTable = new GameTable(game, 30);
-            gameTable.run();
             frame.setVisible(false);
         } else if (e.getActionCommand().contains("GAME LEVEL")) {
             gameLevel++;

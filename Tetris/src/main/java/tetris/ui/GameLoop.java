@@ -30,7 +30,6 @@ public class GameLoop extends Timer implements ActionListener{
             return;
         }
         game.moveBlockDown();
-        panel.repaint();
-        
+        panel.repaint();  
     }
 }

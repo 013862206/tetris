@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 import javax.swing.WindowConstants;
 import tetris.entity.*;
 import tetris.logic.*;
@@ -19,11 +20,12 @@ import tetris.logic.*;
 /**
  * GameTable piirtää pelilaudan tilanteen.
  */
-public class GameTable extends JPanel implements Runnable {
+public class GameTable extends JPanel implements ActionListener {
 
     private Game game;
     private int scale;
     private JFrame frame;
+    private Timer timer;
 
     /**
      *
@@ -33,6 +35,9 @@ public class GameTable extends JPanel implements Runnable {
     public GameTable(Game game, int scale) {
         this.game = game;
         this.scale = scale;
+        run();
+        timer = new Timer(1000 / game.getGameLevel(), this);
+        timer.start();
     }
 
     @Override
@@ -95,7 +100,6 @@ public class GameTable extends JPanel implements Runnable {
         block.move(x, y);
     }
 
-    @Override
     public void run() {
         frame = new JFrame("Tetris");
         int width = (game.getTable().getWidth()) * scale + 300;
@@ -110,19 +114,20 @@ public class GameTable extends JPanel implements Runnable {
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-        while(true) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(GameTable.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            repaint();
-        }
     }
 
     private void createComponents(Container container) {
         container.add(this);
         MyKeyListener listener = new MyKeyListener(game, this);
         frame.addKeyListener(listener);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (!game.isOn()) {
+            return;
+        }
+        game.moveBlockDown();
+        repaint();
     }
 }

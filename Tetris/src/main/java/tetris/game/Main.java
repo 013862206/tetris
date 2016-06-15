@@ -8,7 +8,6 @@ package tetris.game;
 import java.awt.Graphics;
 import tetris.logic.Game;
 import tetris.ui.GameTable;
-import tetris.ui.Gui;
 import tetris.ui.Menu;
 
 /**

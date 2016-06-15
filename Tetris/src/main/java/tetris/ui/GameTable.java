@@ -2,24 +2,28 @@ package tetris.ui;
 
 import static com.sun.java.accessibility.util.AWTEventMonitor.addActionListener;
 import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 import tetris.entity.*;
 import tetris.logic.*;
 
 /**
  * GameTable piirtää pelilaudan tilanteen.
  */
-public class GameTable extends JPanel {
+public class GameTable extends JPanel implements Runnable {
 
     private Game game;
     private int scale;
-    private Thread t;
+    private JFrame frame;
 
     /**
      *
@@ -89,5 +93,36 @@ public class GameTable extends JPanel {
                     250 + scale * p.getYCoordinate(), scale, scale, true);
         }
         block.move(x, y);
+    }
+
+    @Override
+    public void run() {
+        frame = new JFrame("Tetris");
+        int width = (game.getTable().getWidth()) * scale + 300;
+        int height = (game.getTable().getHeight() + 1) * scale;
+
+        frame.setPreferredSize(new Dimension(width, height));
+
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+        createComponents(frame.getContentPane());
+
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+        while(true) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(GameTable.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            repaint();
+        }
+    }
+
+    private void createComponents(Container container) {
+        container.add(this);
+        MyKeyListener listener = new MyKeyListener(game, this);
+        frame.addKeyListener(listener);
     }
 }

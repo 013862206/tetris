@@ -51,7 +51,7 @@ public class GameConstructorTest {
 
     @Test
     public void testConstructorSetsNewBlocksCoordinatesRight() {
-        assertEquals(tableWidth / 2, game.getBlockRandomizer().getX());
+        assertEquals(tableWidth / 2 - 1, game.getBlockRandomizer().getX());
         assertEquals(1, game.getBlockRandomizer().getY());
     }
 
@@ -182,11 +182,11 @@ public class GameConstructorTest {
         IBlock block = new IBlock(x, y, Color.BLACK);
         game.setCurrentBlock(block);
         game.nextBlock();
-        for (Part part: block.getParts()) {
+        for (Part part : block.getParts()) {
             assertEquals(part, game.getTable().getTable()[part.getYCoordinate()][part.getXCoordinate()]);
         }
     }
-    
+
     @Test
     public void testNextBlockChecksTable() {
         for (int x = 0; x < 6; x++) {
@@ -197,7 +197,7 @@ public class GameConstructorTest {
         game.nextBlock();
         assertNull(game.getTable().getTable()[19][0]);
     }
-    
+
     @Test
     public void testNextBlockMoveNextBlockToCurrentIfGameCanContinue() {
         int x = 5;
@@ -208,7 +208,7 @@ public class GameConstructorTest {
         game.nextBlock();
         assertEquals(nextBlock, game.getCurrentBlock());
     }
-    
+
     @Test
     public void testNextBlockDrawNewNextBlockIfGameCanContinue() {
         int x = 5;
@@ -219,7 +219,7 @@ public class GameConstructorTest {
         game.nextBlock();
         assertNotNull(game.getNextBlock());
     }
-    
+
     @Test
     public void testNextBlockIncreasePointStatisticsBlocksByOneIfGameCanContinue() {
         int x = 5;
@@ -229,13 +229,13 @@ public class GameConstructorTest {
         game.nextBlock();
         assertEquals(2, game.getPointStatistics().getBlocks());
     }
-    
+
     @Test
     public void testNextBlockTurnGameOffIfGameCanNotContinue() {
         game.nextBlock();
         assertFalse(game.isOn());
     }
-    
+
     @Test
     public void testMoveBlockDownCallsNextBlockWhenNoFreeSpace() {
         int x = 5;
@@ -245,7 +245,7 @@ public class GameConstructorTest {
         game.moveBlockDown();
         assertNotEquals(block, game.getCurrentBlock());
     }
-    
+
     @Test
     public void testMoveBlockDownFastWorksNoObstacle() {
         int x = 5;
@@ -256,14 +256,14 @@ public class GameConstructorTest {
         assertEquals(19, block.getY());
         assertNotEquals(block, game.getCurrentBlock());
     }
-    
+
     @Test
     public void testMoveBlockDownFastWorksObstacle() {
         int x = 5;
         int y = 1;
         IBlock block = new IBlock(x, y, Color.BLACK);
         game.setCurrentBlock(block);
-        game.getTable().getTable()[12][6] = new Part(7,12, Color.BLACK);
+        game.getTable().getTable()[12][6] = new Part(7, 12, Color.BLACK);
         game.moveBlockDownFast();
         assertEquals(11, block.getY());
         assertNotEquals(block, game.getCurrentBlock());

@@ -7,8 +7,11 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
@@ -22,19 +25,21 @@ import tetris.logic.*;
 /**
  * GameTable piirtää pelilaudan tilanteen.
  */
-public class GameTable extends JPanel implements ActionListener {
+public class GameTable extends JPanel implements ActionListener, KeyListener {
 
     private Game game;
     private int scale;
     private JFrame frame;
     private Timer timer;
+    private Menu menu;
 
     /**
      *
      * @param game
      * @param scale
      */
-    public GameTable(Game game, int scale) {
+    public GameTable(Game game, int scale, Menu menu) {
+        this.menu = menu;
         this.game = game;
         this.scale = scale;
         run();
@@ -115,7 +120,7 @@ public class GameTable extends JPanel implements ActionListener {
     public void run() {
         frame = new JFrame("Tetris");
         int width = (game.getTable().getWidth()) * scale + 300;
-        int height = (game.getTable().getHeight() + 1) * scale;
+        int height = (game.getTable().getHeight() + 2) * scale;
 
         frame.setPreferredSize(new Dimension(width, height));
 
@@ -129,12 +134,28 @@ public class GameTable extends JPanel implements ActionListener {
     }
 
     private void createComponents(Container container) {
-//        JButton exit = new JButton("EXIT");
-//        frame.add(exit, BorderLayout.SOUTH);
+        JPanel buttonsPanel = new JPanel();
+        JButton menu = new JButton("MENU");
+        JButton exit = new JButton("EXIT");
+        JButton newGame = new JButton("NEW GAME");
+        menu.setFocusable(false);
+        exit.setFocusable(false);
+        newGame.setFocusable(false);
 
-        container.add(this);
-        MyKeyListener listener = new MyKeyListener(game, this);
-        frame.addKeyListener(listener);
+        menu.addActionListener(this);
+        exit.addActionListener(this);
+        newGame.addActionListener(this);
+
+        GridLayout gl = new GridLayout();
+        gl.setColumns(3);
+        buttonsPanel.setLayout(gl);
+        buttonsPanel.add(newGame);
+        buttonsPanel.add(menu);
+        buttonsPanel.add(exit);
+        container.add(buttonsPanel, BorderLayout.NORTH);
+        container.add(this, BorderLayout.CENTER);
+
+        frame.addKeyListener(this);
     }
 
     @Override
@@ -143,6 +164,57 @@ public class GameTable extends JPanel implements ActionListener {
             timer.stop();
         }
         game.moveBlockDown();
+        if ("EXIT".equals(e.getActionCommand())) {
+            System.exit(0);
+        }
+        if ("MENU".equals(e.getActionCommand())) {
+            menu.getFrame().setVisible(true);
+            frame.dispose();
+        }
+        if ("NEW GAME".equals(e.getActionCommand())) {
+            game = new Game(game.getGameLevel(), game.getTable().getWidth(), game.getTable().getHeight());
+            timer.restart();
+        }
         repaint();
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (game.isOn()) {
+            switch (e.getKeyCode()) {
+                case KeyEvent.VK_LEFT:
+                    game.moveBlockLeft();
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    game.moveBlockRight();
+                    break;
+                case KeyEvent.VK_UP:
+                    game.rotateBlockToRight();
+                    break;
+                case KeyEvent.VK_DOWN:
+                    game.moveBlockDown();
+                    break;
+                case KeyEvent.VK_SPACE:
+                    game.moveBlockDownFast();
+                    break;
+                case KeyEvent.VK_Z:
+                    game.rotateBlockToLeft();
+                    break;
+                case KeyEvent.VK_X:
+                    game.rotateBlockToRight();
+                    break;
+                default:
+                    break;
+            }
+            repaint();
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
     }
 }

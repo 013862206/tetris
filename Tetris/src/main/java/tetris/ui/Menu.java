@@ -20,7 +20,7 @@ import tetris.logic.Game;
  *
  * @author luhtalam
  */
-public class Menu implements Runnable, ActionListener {
+public class Menu implements ActionListener {
 
     private int gameLevel;
     private JFrame frame;
@@ -30,10 +30,10 @@ public class Menu implements Runnable, ActionListener {
 
     public Menu() {
         this.gameLevel = 1;
+        init();
     }
 
-    @Override
-    public void run() {
+    public void init() {
         frame = new JFrame("MENU");
         frame.setPreferredSize(new Dimension(600, 400));
 
@@ -50,7 +50,7 @@ public class Menu implements Runnable, ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "START GAME") {
             Game game = new Game(this.gameLevel, 10, 20);
-            GameTable gameTable = new GameTable(game, 30);
+            GameTable gameTable = new GameTable(game, 30, this);
             frame.setVisible(false);
         } else if (e.getActionCommand().contains("GAME LEVEL")) {
             gameLevel++;
@@ -79,5 +79,8 @@ public class Menu implements Runnable, ActionListener {
         container.add(level);
         container.add(exit);
     }
-
+    
+    public JFrame getFrame() {
+        return frame;
+    }
 }

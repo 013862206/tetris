@@ -20,3 +20,9 @@
 #Luokkakaavio
 
 ![Luokkakaavio](TetrisClassDiagram.png)
+
+#Sekvenssikaaviot:
+
+![Palikan siirto] (Sekvenssikaaviot/Palikan siirtäminen oikealle.png)
+![Palikan kääntö] (Sekvenssikaaviot/Palikan kääntäminen myötäpäivään.png)
+![BlockLogic] (Sekvenssikaaviot/BlockLogic.canrotateRight.png)

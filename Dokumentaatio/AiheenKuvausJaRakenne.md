@@ -20,3 +20,7 @@
 #Luokkakaavio
 
 ![Luokkakaavio](TetrisClassDiagram.png)
+
+#Sekvenssikaaviot:
+
+

@@ -5,6 +5,6 @@ Reaaliaikainen peli Tetris. Toteututaan graafisen käyttöliittymän ja näppäi
 
 * [Aiheen kuvaus] (Dokumentaatio/AiheenKuvausJaRakenne.md)
 * [Tuntikirjanpito] (Dokumentaatio/Tuntikirjanpito.md)
-* [Pit] (https://htmlpreview.github.io/?https://github.com/luhtalam/Tetris/blob/master/Dokumentaatio/Pit/201606091542/index.html)
+* [Pit] (https://htmlpreview.github.io/?https://github.com/luhtalam/Tetris/blob/master/Dokumentaatio/Pit/201606161906/index.html)
 * [Checkstyle] (https://htmlpreview.github.io/?https://github.com/luhtalam/Tetris/blob/master/Dokumentaatio/Checkstyle ja JavaDoc/site/checkstyle.html)
 * [JavaDoc] (https://htmlpreview.github.io/?https://github.com/luhtalam/Tetris/blob/master/Dokumentaatio/Checkstyle ja JavaDoc/site/apidocs/index.html)

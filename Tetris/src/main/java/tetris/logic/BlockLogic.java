@@ -133,13 +133,8 @@ public class BlockLogic {
      * @see tetris.entity.Block#rotateLeft()
      */
     public static boolean canRotateRight(Table table, Block block) {
-        boolean isPossible = false;
         block.rotateRight();
-        if (BlockLogic.isInTable(table, block)) {
-            if (BlockLogic.canPlace(table, block)) {
-                isPossible = true;
-            }
-        }
+        boolean isPossible = (isInTable(table, block) && canPlace(table, block));
         block.rotateLeft();
         return isPossible;
     }
@@ -153,13 +148,8 @@ public class BlockLogic {
      * pelilaudalla
      */
     public static boolean canRotateLeft(Table table, Block block) {
-        boolean isPossible = false;
         block.rotateLeft();
-        if (BlockLogic.isInTable(table, block)) {
-            if (BlockLogic.canPlace(table, block)) {
-                isPossible = true;
-            }
-        }
+        boolean isPossible = (isInTable(table, block) && canPlace(table, block));
         block.rotateRight();
         return isPossible;
     }

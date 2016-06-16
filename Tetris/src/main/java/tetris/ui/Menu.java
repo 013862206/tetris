@@ -79,7 +79,7 @@ public class Menu implements ActionListener {
         container.add(level);
         container.add(exit);
     }
-    
+
     public JFrame getFrame() {
         return frame;
     }

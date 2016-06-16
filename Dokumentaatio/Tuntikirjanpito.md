@@ -18,3 +18,5 @@ Päivä | Tunnit | Kuvaus
 09.06.2016 | 2.5 h | JavaDocin kirjoittelua.
 13.06.2016 | 2.0 h | GameLoopin luomisen opettelua ja pistestatistiikka sekä seuraavapala grafiikkaliittymään.
 14.06.2016 | 1.5 h | Käyttöliittymän koodailua.
+15.06.2016 | 4.0 h | Toimiva gameloop ja GUI:n muokkausta.
+16.06.2016 | 3.0 h | Sekvenssikaavioiden piirtämistä ja koodin viilaamista.

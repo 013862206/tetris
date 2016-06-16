@@ -38,7 +38,7 @@
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>  <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L31" href="#L31">31</a>      <strong class="jxr_keyword">public</strong> <a href="../../tetris/logic/Game.html">Game</a>(<strong class="jxr_keyword">int</strong> gameLevel, <strong class="jxr_keyword">int</strong> tableWidth, <strong class="jxr_keyword">int</strong> tableHeight) {
 <a class="jxr_linenumber" name="L32" href="#L32">32</a>          <strong class="jxr_keyword">this</strong>.table = <strong class="jxr_keyword">new</strong> <a href="../../tetris/entity/Table.html">Table</a>(tableWidth, tableHeight);
-<a class="jxr_linenumber" name="L33" href="#L33">33</a>          <strong class="jxr_keyword">int</strong> xCoord = tableWidth / 2;
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>          <strong class="jxr_keyword">int</strong> xCoord = tableWidth / 2 - 1;
 <a class="jxr_linenumber" name="L34" href="#L34">34</a>          <strong class="jxr_keyword">this</strong>.randomizer = <strong class="jxr_keyword">new</strong> <a href="../../tetris/logic/BlockRandomizer.html">BlockRandomizer</a>(xCoord, 1, <strong class="jxr_keyword">new</strong> Random());
 <a class="jxr_linenumber" name="L35" href="#L35">35</a>          <strong class="jxr_keyword">this</strong>.currentBlock = randomizer.drawNewBlock();
 <a class="jxr_linenumber" name="L36" href="#L36">36</a>          <strong class="jxr_keyword">this</strong>.nextBlock = randomizer.drawNewBlock();

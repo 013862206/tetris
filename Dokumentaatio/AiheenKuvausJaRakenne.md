@@ -23,4 +23,4 @@
 
 #Sekvenssikaaviot:
 
-
+![Palikan siirto] (Sekvenssikaaviot/Palikan siirtäminen oikealle.png)

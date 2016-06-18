@@ -5,11 +5,6 @@
  */
 package tetris.game;
 
-import java.awt.Graphics;
-import tetris.logic.Game;
-import tetris.ui.GameTable;
-import tetris.ui.Menu;
-
 /**
  *
  * @author luhtalam
@@ -17,10 +12,10 @@ import tetris.ui.Menu;
 public class Main {
 
     /**
-     *
-     * @param args
+     * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Menu m = new Menu();
+        // TODO code application logic here
     }
+    
 }

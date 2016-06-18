@@ -33,7 +33,7 @@ public class Menu implements ActionListener {
         initialize();
     }
 
-    public void initialize() {
+    private void initialize() {
         frame = new JFrame("MENU");
         frame.setPreferredSize(new Dimension(600, 400));
 

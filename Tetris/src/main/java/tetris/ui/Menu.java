@@ -30,10 +30,10 @@ public class Menu implements ActionListener {
 
     public Menu() {
         this.gameLevel = 1;
-        init();
+        initialize();
     }
 
-    public void init() {
+    public void initialize() {
         frame = new JFrame("MENU");
         frame.setPreferredSize(new Dimension(600, 400));
 

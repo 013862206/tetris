@@ -25,7 +25,7 @@ import tetris.logic.*;
 /**
  * GameTable piirtää pelilaudan tilanteen.
  */
-public class GameTable extends JPanel implements ActionListener, KeyListener {
+public class GameTable extends JPanel implements ActionListener {
 
     private Game game;
     private int scale;
@@ -42,7 +42,7 @@ public class GameTable extends JPanel implements ActionListener, KeyListener {
         this.menu = menu;
         this.game = game;
         this.scale = scale;
-        run();
+        initialize();
         timer = new Timer(1000 / game.getGameLevel(), this);
         timer.start();
     }
@@ -117,7 +117,7 @@ public class GameTable extends JPanel implements ActionListener, KeyListener {
         g.drawString("GAME OVER!", scale * 3, scale * 10);
     }
 
-    public void run() {
+    private void initialize() {
         frame = new JFrame("Tetris");
         int width = (game.getTable().getWidth()) * scale + 300;
         int height = (game.getTable().getHeight() + 2) * scale;
@@ -154,8 +154,9 @@ public class GameTable extends JPanel implements ActionListener, KeyListener {
         buttonsPanel.add(exit);
         container.add(buttonsPanel, BorderLayout.NORTH);
         container.add(this, BorderLayout.CENTER);
-
-        frame.addKeyListener(this);
+        
+        GameKeyListener listener = new GameKeyListener(game, this);
+        frame.addKeyListener(listener);
     }
 
     @Override
@@ -173,48 +174,9 @@ public class GameTable extends JPanel implements ActionListener, KeyListener {
         }
         if ("NEW GAME".equals(e.getActionCommand())) {
             game = new Game(game.getGameLevel(), game.getTable().getWidth(), game.getTable().getHeight());
+            initialize();
             timer.restart();
         }
         repaint();
-    }
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        if (game.isOn()) {
-            switch (e.getKeyCode()) {
-                case KeyEvent.VK_LEFT:
-                    game.moveBlockLeft();
-                    break;
-                case KeyEvent.VK_RIGHT:
-                    game.moveBlockRight();
-                    break;
-                case KeyEvent.VK_UP:
-                    game.rotateBlockToRight();
-                    break;
-                case KeyEvent.VK_DOWN:
-                    game.moveBlockDown();
-                    break;
-                case KeyEvent.VK_SPACE:
-                    game.moveBlockDownFast();
-                    break;
-                case KeyEvent.VK_Z:
-                    game.rotateBlockToLeft();
-                    break;
-                case KeyEvent.VK_X:
-                    game.rotateBlockToRight();
-                    break;
-                default:
-                    break;
-            }
-            repaint();
-        }
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
     }
 }

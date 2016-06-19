@@ -21,3 +21,4 @@ Päivä | Tunnit | Kuvaus
 15.06.2016 | 4.0 h | Toimiva gameloop ja GUI:n muokkausta.
 16.06.2016 | 3.0 h | Sekvenssikaavioiden piirtämistä ja koodin viilaamista.
 18.06.2016 | 0.5 h | Käyttöliittymän koodin selkeyttämistä.
+19.06.2016 | 3.0 h | Koodikatselmointi 2, .jar-tiedosto ja pientä viilausta ikkunoihin.

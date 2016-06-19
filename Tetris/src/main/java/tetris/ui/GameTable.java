@@ -23,7 +23,7 @@ import tetris.entity.*;
 import tetris.logic.*;
 
 /**
- * GameTable piirtää pelilaudan tilanteen.
+ * GameTable piirtää pelilaudan tilannetta ja sisältää peliloopin.
  */
 public class GameTable extends JPanel implements ActionListener {
 
@@ -42,6 +42,7 @@ public class GameTable extends JPanel implements ActionListener {
         this.menu = menu;
         this.game = game;
         this.scale = scale;
+        frame = new JFrame("Tetris");
         initialize();
         timer = new Timer(1000 / game.getGameLevel(), this);
         timer.start();
@@ -118,8 +119,7 @@ public class GameTable extends JPanel implements ActionListener {
     }
 
     private void initialize() {
-        frame = new JFrame("Tetris");
-        int width = (game.getTable().getWidth()) * scale + 300;
+        int width = (game.getTable().getWidth()) * scale + 350;
         int height = (game.getTable().getHeight() + 2) * scale;
 
         frame.setPreferredSize(new Dimension(width, height));

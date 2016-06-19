@@ -5,17 +5,18 @@
  */
 package tetris.game;
 
+import tetris.ui.Menu;
+
 /**
- *
- * @author luhtalam
+ *Luokka luo uuden pelivalikon.
  */
 public class Main {
 
     /**
-     * @param args the command line arguments
+     * Käynnistää uuden pelivalikon.
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Menu m = new Menu();
     }
     
 }

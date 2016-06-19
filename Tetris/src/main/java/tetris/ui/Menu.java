@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tetris.ui;
 
 import java.awt.Container;
@@ -17,8 +12,8 @@ import javax.swing.WindowConstants;
 import tetris.logic.Game;
 
 /**
- *
- * @author luhtalam
+ * Luokka pelivalikkoa varten. Valikon kautta pelaaja voi muuttaa pelin
+ * vaikeustasoa ja aloittaa uuden pelin.
  */
 public class Menu implements ActionListener {
 

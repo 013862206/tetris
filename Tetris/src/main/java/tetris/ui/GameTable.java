@@ -10,8 +10,6 @@ import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
@@ -32,6 +30,7 @@ public class GameTable extends JPanel implements ActionListener {
     private JFrame frame;
     private Timer timer;
     private Menu menu;
+    private boolean pause;
 
     /**
      *
@@ -44,6 +43,7 @@ public class GameTable extends JPanel implements ActionListener {
         this.scale = scale;
         frame = new JFrame("Tetris");
         initialize();
+        pause = false;
         timer = new Timer(1000 / game.getGameLevel(), this);
         timer.start();
     }
@@ -74,6 +74,8 @@ public class GameTable extends JPanel implements ActionListener {
                 }
             }
         }
+        g.setColor(Color.gray);
+        g.drawRect(0, 0, game.getTable().getWidth() * scale, game.getTable().getHeight() * scale);
     }
 
     private void drawCurrentBlock(Graphics g) {
@@ -138,23 +140,27 @@ public class GameTable extends JPanel implements ActionListener {
         JButton menu = new JButton("MENU");
         JButton exit = new JButton("EXIT");
         JButton newGame = new JButton("NEW GAME");
+        JButton pause = new JButton("PAUSE");
         menu.setFocusable(false);
         exit.setFocusable(false);
         newGame.setFocusable(false);
+        pause.setFocusable(false);
 
         menu.addActionListener(this);
         exit.addActionListener(this);
         newGame.addActionListener(this);
+        pause.addActionListener(this);
 
         GridLayout gl = new GridLayout();
-        gl.setColumns(3);
+        gl.setColumns(4);
         buttonsPanel.setLayout(gl);
         buttonsPanel.add(newGame);
+        buttonsPanel.add(pause);
         buttonsPanel.add(menu);
         buttonsPanel.add(exit);
         container.add(buttonsPanel, BorderLayout.NORTH);
         container.add(this, BorderLayout.CENTER);
-        
+
         GameKeyListener listener = new GameKeyListener(game, this);
         frame.addKeyListener(listener);
     }

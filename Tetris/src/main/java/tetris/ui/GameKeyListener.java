@@ -20,34 +20,7 @@ public class GameKeyListener implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-        if (game.isOn()) {
-            switch (e.getKeyCode()) {
-                case KeyEvent.VK_LEFT:
-                    game.moveBlockLeft();
-                    break;
-                case KeyEvent.VK_RIGHT:
-                    game.moveBlockRight();
-                    break;
-                case KeyEvent.VK_UP:
-                    game.rotateBlockToRight();
-                    break;
-                case KeyEvent.VK_DOWN:
-                    game.moveBlockDown();
-                    break;
-                case KeyEvent.VK_SPACE:
-                    game.moveBlockDownFast();
-                    break;
-                case KeyEvent.VK_Z:
-                    game.rotateBlockToLeft();
-                    break;
-                case KeyEvent.VK_X:
-                    game.rotateBlockToRight();
-                    break;
-                default:
-                    break;
-            }
-            panel.repaint();
-        }
+        
     }
 
     @Override

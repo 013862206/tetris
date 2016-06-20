@@ -22,3 +22,4 @@ Päivä | Tunnit | Kuvaus
 16.06.2016 | 3.0 h | Sekvenssikaavioiden piirtämistä ja koodin viilaamista.
 18.06.2016 | 0.5 h | Käyttöliittymän koodin selkeyttämistä.
 19.06.2016 | 3.0 h | Koodikatselmointi 2, .jar-tiedosto ja pientä viilausta ikkunoihin.
+20.06.2016 | 2.0 h | Pajassa ongelmakohtien miettimistä ja lisäominaisuuksien koodaamisen aloittaminen.

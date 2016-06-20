@@ -155,7 +155,6 @@ public class GameTable extends JPanel implements ActionListener {
         gl.setColumns(4);
         buttonsPanel.setLayout(gl);
         buttonsPanel.add(newGame);
-        buttonsPanel.add(pause);
         buttonsPanel.add(menu);
         buttonsPanel.add(exit);
         container.add(buttonsPanel, BorderLayout.NORTH);
@@ -167,6 +166,7 @@ public class GameTable extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        timer.setDelay(1000 / game.getGameLevel());
         if (!game.isOn()) {
             timer.stop();
         }

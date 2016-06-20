@@ -46,6 +46,11 @@ public class PointStatisticsTest {
     public void testConstructorSetsLinesRight() {
         assertEquals(0, points.getLines());
     }
+    
+    @Test
+    public void testConstructorSetsLinesForLevelRight() {
+        assertEquals(0, points.getLinesForLevel());
+    }
 
     @Test
     public void testNewBlockIncreaseBlocksByOne() {
@@ -76,6 +81,12 @@ public class PointStatisticsTest {
         points.addPoints(1);
         assertEquals(1, points.getLines());
     }
+    
+    @Test
+    public void testaddPointsIncreaseLinesForLevelRightOneRow() {
+        points.addPoints(1);
+        assertEquals(1, points.getLinesForLevel());
+    }
 
     @Test
     public void testaddPointsIncreasePointsRightTwoRows() {
@@ -87,6 +98,12 @@ public class PointStatisticsTest {
     public void testaddPointsIncreaseLinesRightTwoRows() {
         points.addPoints(2);
         assertEquals(2, points.getLines());
+    }
+    
+    @Test
+    public void testaddPointsIncreaseLinesForLevelRightTwoRows() {
+        points.addPoints(2);
+        assertEquals(2, points.getLinesForLevel());
     }
 
     @Test
@@ -100,6 +117,12 @@ public class PointStatisticsTest {
         points.addPoints(3);
         assertEquals(3, points.getLines());
     }
+    
+    @Test
+    public void testaddPointsIncreaseLinesForLevelRightThreeRows() {
+        points.addPoints(3);
+        assertEquals(3, points.getLinesForLevel());
+    }
 
     @Test
     public void testaddPointsIncreasePointsRightFourRows() {
@@ -111,5 +134,48 @@ public class PointStatisticsTest {
     public void testaddPointsIncreaseLinesRightFourRows() {
         points.addPoints(4);
         assertEquals(4, points.getLines());
+    }
+    
+    @Test
+    public void testaddPointsIncreaseLinesForLevleRightFourRows() {
+        points.addPoints(4);
+        assertEquals(4, points.getLinesForLevel());
+    }
+    
+    @Test
+    public void testLinesForLevelIncreaseGameLevel25Rows() {
+        points.addPoints(4);
+        points.addPoints(4);
+        points.addPoints(4);
+        points.addPoints(4);
+        points.addPoints(4);
+        points.addPoints(4);
+        points.addPoints(1);
+        assertEquals(gameLevel +1, points.getGameLevel());
+    }
+    
+    @Test
+    public void testLinesForLevelSetsToZero25Rows() {
+        points.addPoints(4);
+        points.addPoints(4);
+        points.addPoints(4);
+        points.addPoints(4);
+        points.addPoints(4);
+        points.addPoints(4);
+        points.addPoints(1);
+        assertEquals(0, points.getLinesForLevel());
+    }
+    
+    @Test
+    public void testLinesForLevelDoesNotIncreaseGameLevelOver20() {
+        points = new PointStatistics(20);
+        points.addPoints(4);
+        points.addPoints(4);
+        points.addPoints(4);
+        points.addPoints(4);
+        points.addPoints(4);
+        points.addPoints(4);
+        points.addPoints(1);
+        assertEquals(20, points.getGameLevel());
     }
 }

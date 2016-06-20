@@ -9,6 +9,7 @@ public class PointStatistics {
     private int lines; //tuhotut rivit
     private int gameLevel; //pelin vaikeustaso
     private int blocks; //konstruoidut pelipalikat
+    private int linesForLevel;
 
     /**
      * Luo uuden pistestatistiikka olion, joka huolehtii pelin pisteiden
@@ -19,6 +20,7 @@ public class PointStatistics {
     public PointStatistics(int gameLevel) {
         this.points = 0;
         this.lines = 0;
+        this.linesForLevel = 0;
         this.blocks = 1;
         this.gameLevel = gameLevel;
     }
@@ -41,18 +43,25 @@ public class PointStatistics {
         } else if (rows == 1) {
             points += 40 * this.gameLevel;
             lines++;
-            return;
+            linesForLevel++;
         } else if (rows == 2) {
             points += 100 * this.gameLevel;
             lines += 2;
-            return;
+            linesForLevel += 2;
         } else if (rows == 3) {
             points += 300 * this.gameLevel;
             lines += 3;
-            return;
+            linesForLevel += 3;
         } else {
             points += 1200 * this.gameLevel;
             lines += 4;
+            linesForLevel += 4;
+        }
+        if (linesForLevel >= 25) {
+            if (gameLevel < 20) {
+                gameLevel++;
+            }
+            linesForLevel = linesForLevel - 25;
         }
     }
 
@@ -68,6 +77,10 @@ public class PointStatistics {
      */
     public int getLines() {
         return lines;
+    }
+    
+    public int getLinesForLevel() {
+        return linesForLevel;
     }
 
     /**

@@ -14,7 +14,6 @@ public class Game { //add GhostBlock??
     private PointStatistics points; //Pistestatistiikkaolio
     private Block currentBlock; //Liikuteltava pelipalikka
     private Block nextBlock; //Seuraava pelipalikka
-    private int gameLevel; //Pelin vaikeustaso
     private boolean on; //Totuusarvo siitä, onko peli käynnissä
 
     /**
@@ -35,7 +34,6 @@ public class Game { //add GhostBlock??
         this.currentBlock = randomizer.drawNewBlock();
         this.nextBlock = randomizer.drawNewBlock();
         this.points = new PointStatistics(gameLevel);
-        this.gameLevel = gameLevel;
         this.on = true;
     }
 
@@ -173,7 +171,7 @@ public class Game { //add GhostBlock??
     }
 
     public int getGameLevel() {
-        return this.gameLevel;
+        return this.points.getGameLevel();
     }
 
     public Table getTable() {

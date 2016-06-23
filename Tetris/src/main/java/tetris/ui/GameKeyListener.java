@@ -6,13 +6,19 @@ import javax.swing.JPanel;
 import tetris.logic.Game;
 
 /**
- *Luokka toimii pelin näppäimistön kuuntelijana.
+ * Luokka toimii pelin näppäimistön kuuntelijana.
  */
 public class GameKeyListener implements KeyListener {
 
     private JPanel panel;
     private Game game;
-    
+
+    /**
+     * Luo uuden näppäimistön kuuntelijan.
+     *
+     * @param game Peli, jota näppäinten painalluksilla hallinnoidaan
+     * @param panel JPanel, joka piirtää peliä
+     */
     public GameKeyListener(Game game, JPanel panel) {
         this.game = game;
         this.panel = panel;
@@ -20,12 +26,12 @@ public class GameKeyListener implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-        
+
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (game.isOn()) {
+        if (game.getIsOn()) {
             switch (e.getKeyCode()) {
                 case KeyEvent.VK_LEFT:
                     game.moveBlockLeft();

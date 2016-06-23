@@ -33,9 +33,13 @@ public class GameTable extends JPanel implements ActionListener {
     private boolean pause;
 
     /**
+     * Luo uuden GameTable olion, joka piirtää sille parametrina annettavaa
+     * peliä. GameTable tuntee myös pelivalikon, josta GameTable on luotu, jotta
+     * pelivalikkoon voidaan myöhemmin palata.
      *
-     * @param game
-     * @param scale
+     * @param game Peli, jota GameTable piirtää
+     * @param scale Skaalauskerroin, joka määrittelee piirrettävien palojen koon
+     * @param menu Pelivalikko, joka luo GameTable olion
      */
     public GameTable(Game game, int scale, Menu menu) {
         this.menu = menu;
@@ -55,7 +59,7 @@ public class GameTable extends JPanel implements ActionListener {
         drawCurrentBlock(g);
         drawPointStatistics(g);
         drawNextBlock(g);
-        if (!game.isOn()) {
+        if (!game.getIsOn()) {
             drawGameOver(g);
         }
     }
@@ -167,7 +171,7 @@ public class GameTable extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         timer.setDelay(1000 / game.getGameLevel());
-        if (!game.isOn()) {
+        if (!game.getIsOn()) {
             timer.stop();
         }
         game.moveBlockDown();
@@ -179,7 +183,7 @@ public class GameTable extends JPanel implements ActionListener {
             frame.dispose();
         }
         if ("NEW GAME".equals(e.getActionCommand())) {
-            game = new Game(game.getGameLevel(), game.getTable().getWidth(), game.getTable().getHeight());
+            game = new Game(menu.getGameLevel(), game.getTable().getWidth(), game.getTable().getHeight());
             initialize();
             timer.restart();
         }

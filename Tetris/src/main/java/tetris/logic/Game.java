@@ -186,7 +186,7 @@ public class Game { //add GhostBlock??
         return currentBlock;
     }
 
-    public boolean isOn() {
+    public boolean getIsOn() {
         return on;
     }
 

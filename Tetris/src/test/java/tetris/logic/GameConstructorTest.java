@@ -62,7 +62,7 @@ public class GameConstructorTest {
 
     @Test
     public void testGameIsOnAtBeginning() {
-        assertTrue(game.isOn());
+        assertTrue(game.getIsOn());
     }
 
     @Test
@@ -233,7 +233,7 @@ public class GameConstructorTest {
     @Test
     public void testNextBlockTurnGameOffIfGameCanNotContinue() {
         game.nextBlock();
-        assertFalse(game.isOn());
+        assertFalse(game.getIsOn());
     }
 
     @Test

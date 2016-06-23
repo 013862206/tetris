@@ -78,7 +78,11 @@ public class PointStatistics {
     public int getLines() {
         return lines;
     }
-    
+
+    /**
+     * @return Palauttaa edellisen pelin vaikeustason nousun jälkeen tuhottujen
+     * rivien määrän
+     */
     public int getLinesForLevel() {
         return linesForLevel;
     }

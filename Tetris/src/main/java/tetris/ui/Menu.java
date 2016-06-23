@@ -23,6 +23,9 @@ public class Menu implements ActionListener {
     private JButton level;
     private JButton exit;
 
+    /**
+     * Luo uuden pelivalikon
+     */
     public Menu() {
         this.gameLevel = 1;
         initialize();
@@ -47,12 +50,12 @@ public class Menu implements ActionListener {
             Game game = new Game(this.gameLevel, 10, 20);
             GameTable gameTable = new GameTable(game, 30, this);
             frame.setVisible(false);
-        } else if (e.getActionCommand().contains("GAME LEVEL")) {
+        } else if (e.getActionCommand().contains("STARTING GAME LEVEL")) {
             gameLevel++;
             if (gameLevel > 10) {
                 gameLevel = 1;
             }
-            level.setText("GAME LEVEL: " + this.gameLevel);
+            level.setText("STARTING GAME LEVEL: " + this.gameLevel);
         } else if (e.getActionCommand() == "EXIT") {
             System.exit(0);
         }
@@ -62,7 +65,7 @@ public class Menu implements ActionListener {
         start = new JButton("START GAME");
         start.addActionListener(this);
 
-        level = new JButton("GAME LEVEL: " + this.gameLevel);
+        level = new JButton("STARTING GAME LEVEL: " + this.gameLevel);
         level.addActionListener(this);
 
         exit = new JButton("EXIT");
@@ -75,7 +78,17 @@ public class Menu implements ActionListener {
         container.add(exit);
     }
 
+    /**
+     * @return Pelivalikon JFrame
+     */
     public JFrame getFrame() {
         return frame;
+    }
+
+    /**
+     * @return Pelin aloitusvaikeustaso
+     */
+    public int getGameLevel() {
+        return this.gameLevel;
     }
 }

@@ -203,7 +203,7 @@ public class GameMovementTest {
     @Test
     public void testNextBlockTurnGameOffIfGameCanNotContinue() {
         game.nextBlock();
-        assertFalse(game.isOn());
+        assertFalse(game.getIsOn());
     }
 
     @Test

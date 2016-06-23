@@ -10,4 +10,4 @@ Peliä pelataan näppäimistön avulla. Nuolinäppäinten avulla pelipalikkaa vo
 
 ##Valikot
 
-Ohjelma avaa aluksi pelaajalle aloitusvalikon. Valikkoa hallinnoidaan hiiren liikuttamalla ja haluttua nappia klikkaamalla. Aloitusvalikossa pelaaja voi säätää aloitus vaikeustasoa eli pelinopeutta korkeammaksi, aloittaa uuden pelin tai sulkea pelin. Uuden pelin alkaessa avautuu peli-ikkuna. Peli-ikkunan ylälaidassa on myös hiirellä hallinnoitava valikko, jonka kautta pelaaja voi alottaa uuden pelin, palata aloitusvalikkoon tai sulkea ohjelman. 
+Ohjelma avaa aluksi pelaajalle aloitusvalikon. Valikkoa hallinnoidaan hiirtä liikuttamalla ja haluttua nappia klikkaamalla. Aloitusvalikossa pelaaja voi säätää aloitus vaikeustasoa eli pelinopeutta korkeammaksi, aloittaa uuden pelin tai sulkea pelin. Uuden pelin alkaessa avautuu peli-ikkuna. Peli-ikkunan ylälaidassa on myös hiirellä hallinnoitava valikko, jonka kautta pelaaja voi alottaa uuden pelin, palata aloitusvalikkoon tai sulkea ohjelman. 

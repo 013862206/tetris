@@ -13,7 +13,6 @@ Pelilogiikka koostuu viidestä eri peliä hallinnoivasta luokasta: BlockLogic-, 
 
 Pelipalikat ovat abstraktin luokan Block perivien luokkien ilmentymiä. Block-luokka vastaa pelipalikoiden liikuttelusta ja sen perivät luokat erilaisten pelipalikoiden ilmentymistä. Jokainen pelipalikka koostu neljästä Part-luokan oliosta. Jokainen pelipalikka koostuu neljästä palasta. Yhtä palikan palaa vastaa yksi Part-luokan olio. Jokainen pala tuntee oman sijaintinsa ja värinsä. Kun pelipalikkaa halutaan siirtää, jokaista pelipalikan palaa siirretään. Sekä Block- että Part-luokka perii rajapinnan Moveable, joka määrittelee että sen perivillä luokilla on oltava metodit moveDown(), moveRight() ja moveLeft(). Pelilaudan ilmentymänä toimii Table-luokka, johon Part-luokan olioita voi tallentaa. Teoriassa pelipalikat liikkuvat pelilaudalla, mutta käytännössä ne liitetään Table-luokan pelilautaolioon vasta niiden saavuttaessa pelilaudalla jo olevan pelipalikan tai pelilaudan alalaidan.  
 
-###Pelielementit
 
 
 

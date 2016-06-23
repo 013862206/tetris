@@ -14,6 +14,7 @@ public class Main {
 
     /**
      * Käynnistää uuden pelivalikon.
+     * @param args
      */
     public static void main(String[] args) {
         Menu m = new Menu();

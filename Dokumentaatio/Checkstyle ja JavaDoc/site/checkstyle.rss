@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2016</copyright>
     <item>
-      <title>File: 19,
-             Errors: 1,
+      <title>File: 20,
+             Errors: 0,
              Warnings: 0,
              Infos: 0
       </title>
@@ -158,6 +158,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="${project.url}/checkstyle.html#tetris.ui.GameKeyListener.java">tetris/ui/GameKeyListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="${project.url}/checkstyle.html#tetris.logic.PointStatistics.java">tetris/logic/PointStatistics.java</a>
                 </td>
                 <td>
@@ -209,7 +223,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  1
+                  0
                 </td>
               </tr>
                           <tr>

@@ -30,7 +30,6 @@ public class GameTable extends JPanel implements ActionListener {
     private JFrame frame;
     private Timer timer;
     private Menu menu;
-    private boolean pause;
 
     /**
      * Luo uuden GameTable olion, joka piirtää sille parametrina annettavaa
@@ -47,7 +46,6 @@ public class GameTable extends JPanel implements ActionListener {
         this.scale = scale;
         frame = new JFrame("Tetris");
         initialize();
-        pause = false;
         timer = new Timer(1000 / game.getGameLevel(), this);
         timer.start();
     }
@@ -144,19 +142,16 @@ public class GameTable extends JPanel implements ActionListener {
         JButton menu = new JButton("MENU");
         JButton exit = new JButton("EXIT");
         JButton newGame = new JButton("NEW GAME");
-        JButton pause = new JButton("PAUSE");
         menu.setFocusable(false);
         exit.setFocusable(false);
         newGame.setFocusable(false);
-        pause.setFocusable(false);
 
         menu.addActionListener(this);
         exit.addActionListener(this);
         newGame.addActionListener(this);
-        pause.addActionListener(this);
 
         GridLayout gl = new GridLayout();
-        gl.setColumns(4);
+        gl.setColumns(3);
         buttonsPanel.setLayout(gl);
         buttonsPanel.add(newGame);
         buttonsPanel.add(menu);

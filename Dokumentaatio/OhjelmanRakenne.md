@@ -3,6 +3,10 @@
 
 ###Käyttöliittymä
 
+Käyttöliittymä koostuu aloitusvalikosta ja peli-ikkunasta. Aloitusvalikon kautta luodaan uusi peli-olio ja sen graafiikkaa hallinnoima peli-ikkuna. Peli-ikkunaan on liitettynä näppäinten painalluksia hallinnoiva luokka GameKeyListener, jonka tehtävänä on ohjailla pelin-olion konstruoimaa pelipalikkaa pelaajan painamien näppäinten perusteella. Jotta pelipalikkaa voidaan liikuttaa ja grafiikkaa päivittää liikkeiden mukaisesti, näppäimistön kuuntelija tuntee sekä tämän hetkisen peli-olion että peliä piirtävän peli-ikkunan. Peli-ikkuna taas tuntee sen luoneen aloitusvalikon, jotta valikkoon voidaan myöhemmin palata.
+
+###Pelielementit
+
 
 
 ##Luokkakaavio

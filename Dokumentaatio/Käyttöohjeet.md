@@ -6,7 +6,7 @@ Pelissä pelaajan tarkoituksena on siirrellä pelin konstruoimia pelipalikoita n
 
 ##Pelin ohjaaminen
 
-Peliä pelataan näppäimistön avulla. Nuolinäppäinten avulla pelipalikkaa voidaan siirrellä oikealle, vasemmalle ja alaspäin. Ylöspäin nuolen avulla pelipalikkaa voidaan kiertää 90 astetta oikealle. Pelipalikkaa voidaan kiertää myös näppäinten Z ja X avulla. Z-näppäin pyörättää pelipalikkaa 90 astetta vasemmalle ja X-näppäin 90 astetta oikealle. Vasemmalle pyörittämistä tarvitsee todennäköisesti vasta suuremmilla pelinopeuksilla. Mikäli pelaaja ei halua odottaa, että pelipalikka putoaa itsestään alas asti, sen voi pudottaa välittömästi niin alas kuin mahdollista välilyöntiä käyttämällä. Tällöin kannattaa kuitenkin olla varma, että pelipalikka putoaa haluttuun kohtaan pelilaudassa.
+Peliä pelataan näppäimistön avulla. Nuolinäppäinten avulla pelipalikkaa voidaan siirrellä oikealle, vasemmalle ja alaspäin. Ylöspäin nuolen avulla pelipalikkaa voidaan kiertää 90 astetta myötäpäivään. Pelipalikkaa voidaan kiertää myös näppäinten Z ja X avulla. Z-näppäin pyörättää pelipalikkaa 90 astetta vastapäivään ja X-näppäin 90 astetta myötäpäivään. Vastapäivään pyörittämistä tarvitsee todennäköisesti vasta suuremmilla pelinopeuksilla. Mikäli pelaaja ei halua odottaa, että pelipalikka putoaa itsestään alas asti, sen voi pudottaa välittömästi niin alas kuin mahdollista välilyöntiä käyttämällä. Tällöin kannattaa kuitenkin olla varma, että pelipalikka putoaa haluttuun kohtaan pelilaudassa.
 
 ##Valikot
 

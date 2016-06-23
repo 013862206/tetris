@@ -1,5 +1,11 @@
 #Ohjelman rakenne
 
+##Rakennekuvaus
+
+###Käyttöliittymä
+
+
+
 ##Luokkakaavio
 
 ![Luokkakaavio](TetrisClassDiagram.png)

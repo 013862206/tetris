@@ -11,7 +11,7 @@
 * Pelipalikoiden siirtely
 * Pelipalikoiden rotaatio
 
-**Mahdollisia lisätoimintoja mikäli aikaa riittää:**
+**Mahdollisia lisätoimintoja:**
 * Pelin tauotus mahdollisuus
 * Pelinäppäinten muuttaminen
 * Värimaailman säätäminen

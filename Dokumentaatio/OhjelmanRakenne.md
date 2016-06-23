@@ -1,4 +1,3 @@
-#Ohjelman rakenne
 
 ##Rakennekuvaus
 

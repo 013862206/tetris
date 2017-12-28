@@ -8,5 +8,5 @@ Reaaliaikainen peli Tetris. Toteututaan graafisen käyttöliittymän ja näppäi
 * [Käyttöohjeet](Dokumentaatio/Käyttöohjeet.md)
 * [Tuntikirjanpito](Dokumentaatio/Tuntikirjanpito.md)
 * [Pit](https://htmlpreview.github.io/?https://github.com/luhtalam/Tetris/blob/master/Dokumentaatio/Pit/201606231446/index.html)
-* [Checkstyle](https://htmlpreview.github.io/?https://github.com/luhtalam/Tetris/blob/master/Dokumentaatio/Checkstyle ja JavaDoc/site/checkstyle.html)
-* [JavaDoc](https://htmlpreview.github.io/?https://github.com/luhtalam/Tetris/blob/master/Dokumentaatio/Checkstyle ja JavaDoc/site/apidocs/index.html)
+* [Checkstyle](https://htmlpreview.github.io/?https://github.com/luhtalam/Tetris/blob/master/Dokumentaatio/Checkstyle)
+* [JavaDoc](JavaDoc/site/apidocs/index.html)
